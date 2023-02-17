@@ -11,20 +11,18 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 116, 71 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 60.0083
 
-[node name="Gull" type="Node2D"]
+[node name="Gull" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

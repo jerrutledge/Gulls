@@ -1,27 +1,53 @@
-extends Node2D
+extends KinematicBody2D
 
-export (int) var speed = 500
-var screen_size
+export (int) var base_speed = 500
+var dir:int = 1
+var dive: bool = false
+var rise: bool = false
 
-# Called when the node enters the scene tree for the first time.
+export (float) var dive_accel = 1500.0
+export (float) var rise_speed = 700.0
+export (float) var h_drag = 0.4
+
+var velocity: Vector2 = Vector2.ZERO
+var acceleration: Vector2 = Vector2.ZERO
+
 func _ready():
-	screen_size = get_viewport_rect().size
+	velocity.x = base_speed
 
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("right"):
-		velocity.x += 1
-	if Input.is_action_pressed("left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("down"):
-		velocity.y += 1
-	if Input.is_action_pressed("up"):
-		velocity.y -= 1
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
+func _physics_process(_delta):
+	# collect inputs
+	get_inputs()
+	# calculate movement
+	velocity.x = abs(velocity.x)
+	if dive:
+		# speed downwards
+		velocity.y += dive_accel * _delta
+		velocity.x += dive_accel * _delta * 0.5
 	else:
-		$AnimatedSprite.stop()
+		# flatten out
+		velocity.y -= velocity.y * 5 * _delta
+	if not dive and rise:
+		if velocity.x > base_speed:
+			velocity.x -= (velocity.x - base_speed) * h_drag * _delta
+		if velocity.y <= -rise_speed:
+			velocity.y = -rise_speed
+		else:
+			velocity.y -= rise_speed * 0.2
+	velocity.x *= dir
 	
-	position += velocity * delta
+	velocity = move_and_slide(velocity)
+
+func get_inputs():
+	if Input.is_action_just_pressed("right"):
+		dir = 1
+	if Input.is_action_just_pressed("left"):
+		dir = -1
+	if Input.is_action_pressed("down"):
+		dive = true
+	else:
+		dive = false
+	if Input.is_action_pressed("up") and not dive:
+		rise = true
+	else:
+		rise = false
