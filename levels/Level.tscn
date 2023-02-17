@@ -19,6 +19,6 @@ follow_viewport_enable = true
 follow_viewport_scale = 0.5
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 centered = false
-offset = Vector2( -400, -400 )
