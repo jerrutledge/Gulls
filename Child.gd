@@ -19,5 +19,8 @@ func _process(delta):
 	position += velocity * delta
 	if position.x - origin.x > 400.0:
 		velocity.x = -speed
+		set_scale(Vector2(-1, 1))
+		
 	if position.x - origin.x < -400:
 		velocity.x = speed
+		set_scale(Vector2(1,1))
