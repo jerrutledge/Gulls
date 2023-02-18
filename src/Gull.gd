@@ -5,6 +5,7 @@ var dir:int = 1
 var dive: bool = false
 var rise: bool = false
 var target_h_speed: float
+var dead: bool = false
 
 export (float) var dive_accel = 3000.0
 export (float) var max_rise_speed = 1800.0
@@ -19,6 +20,7 @@ var velocity: Vector2 = Vector2.ZERO
 var acceleration: Vector2 = Vector2.ZERO
 
 onready var sprite :AnimatedSprite = $AnimatedSprite
+const deadgull: PackedScene = preload("res://src/DeadGull.tscn")
 
 func _ready():
 	sprite.play("flap")
@@ -121,7 +123,16 @@ func process_animation():
 	sprite.rotation = rot
 
 func die():
-	pass
+	if dead:
+		return
+	dead = true
+	var corpse = deadgull.instance()
+	get_parent().add_child(corpse)
+	corpse.position = position
+	corpse.linear_velocity.x = base_speed / 2 * dir
+	corpse.linear_velocity.y = -40
+	corpse.angular_velocity = 50
+	queue_free()
 
 func _on_hazard_area_entered(_area):
 	die()
