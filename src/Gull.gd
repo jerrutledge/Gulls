@@ -6,11 +6,12 @@ var dive: bool = false
 var rise: bool = false
 var target_h_speed: float
 
-export (float) var dive_accel = 1500.0
-export (float) var max_rise_speed = 800.0
+export (float) var dive_accel = 1800.0
+export (float) var max_rise_speed = 1800.0
 export (float) var rise_accel = 3000.0
-export (float) var h_drag = 0.6
-export (float) var turning_factor = 5.0
+export (float) var rise_h_conversion = 7.0
+export (float) var h_drag = 0.8
+export (float) var turning_factor = 4.0
 export (float) var dive_v_to_h_conversion_ratio = 0.5
 export (float) var v_flattening_factor = 5.0
 
@@ -44,6 +45,7 @@ func _physics_process(_delta):
 			# lose momentum if rising
 			var accel = (abs(velocity.x) - base_speed) * h_drag * _delta
 			velocity.x -= accel if velocity.x > 0 else -accel
+			velocity.y -= accel * rise_h_conversion
 		# rise at maximum the rise_speed
 		if velocity.y <= -max_rise_speed:
 			velocity.y = -max_rise_speed
