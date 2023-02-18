@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal died
+
 var dir: int = 1
 var dive: bool = false
 var rise: bool = false
@@ -148,6 +150,7 @@ func die():
 	debris.position = position
 	debris.emitting = true
 	camera.position = position
+	emit_signal("died")
 	queue_free()
 
 
