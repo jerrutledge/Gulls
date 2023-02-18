@@ -8,6 +8,8 @@ var _level_node = null
 var starting_level_name = "Level"
 var current_level_name
 
+#var _pause_menu = $Pause_Menu
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -19,6 +21,7 @@ func _input(event):
 		load_level(current_level_name)
 
 
+
 func load_level(level_name):
 	if not (_level_node == null):
 		_level_node.name = _level_node.name + "old"
@@ -27,7 +30,7 @@ func load_level(level_name):
 	_level_node.name = level_name
 	add_child(_level_node)
 	
-	var playerd = _level_node.get_node("Gull")
+	var player = _level_node.get_node("Gull")
 	current_level_name = level_name
 	
 
