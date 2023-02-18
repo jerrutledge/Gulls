@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/left.png-f65857fb01dff826abb556f87f5d39b3.stex"
+path="res://.import/down_circle.png-d1b8864ffa9ff52021b7b4a5cebf2392.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/left.png"
-dest_files=[ "res://.import/left.png-f65857fb01dff826abb556f87f5d39b3.stex" ]
+source_file="res://assets/art/ui/down_circle.png"
+dest_files=[ "res://.import/down_circle.png-d1b8864ffa9ff52021b7b4a5cebf2392.stex" ]
 
 [params]
 
