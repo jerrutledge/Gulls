@@ -35,65 +35,66 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="BigClouds" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color( 1, 1, 1, 0.584314 )
 motion_scale = Vector2( 0.3, 0.4 )
-motion_mirroring = Vector2( 6000, 0 )
+motion_mirroring = Vector2( 7000, 0 )
 
-[node name="Cloud" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 3214, 2396.5 )
-scale = Vector2( 6.15312, 3.20312 )
+[node name="Cloud" type="Sprite" parent="ParallaxBackground/BigClouds"]
+position = Vector2( 1739.5, 2391 )
+scale = Vector2( 5.55156, 3.20312 )
 texture = ExtResource( 2 )
 
-[node name="Cloud2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 3623.99, 4825.96 )
+[node name="Cloud2" type="Sprite" parent="ParallaxBackground/BigClouds"]
+position = Vector2( 3519, 4104 )
 scale = Vector2( -8.43744, 5.31499 )
 texture = ExtResource( 2 )
 
-[node name="Cloud3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 4719.5, 1324 )
-scale = Vector2( 6.70781, 1.45625 )
+[node name="Cloud3" type="Sprite" parent="ParallaxBackground/BigClouds"]
+position = Vector2( 4661, 1385 )
+scale = Vector2( 5.66875, 1.8375 )
 texture = ExtResource( 2 )
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="LittleClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+self_modulate = Color( 1, 1, 1, 0.803922 )
 motion_mirroring = Vector2( 6000, 0 )
 
-[node name="Cloud" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 1565, 2044 )
 texture = ExtResource( 2 )
 
-[node name="Cloud2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud2" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 2491, 2772 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 
-[node name="Cloud3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud3" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 2893, 1397 )
 texture = ExtResource( 2 )
 
-[node name="Cloud4" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud4" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 1029, 570 )
 texture = ExtResource( 2 )
 
-[node name="Cloud5" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud5" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 5893, 3296 )
 texture = ExtResource( 2 )
 
-[node name="Cloud9" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud9" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 4955, 948 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 
-[node name="Cloud6" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 1716, 4333 )
+[node name="Cloud6" type="Sprite" parent="ParallaxBackground/LittleClouds"]
+position = Vector2( 1699, 4543 )
 texture = ExtResource( 2 )
 
-[node name="Cloud7" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Cloud7" type="Sprite" parent="ParallaxBackground/LittleClouds"]
 position = Vector2( 3668, 3803 )
 texture = ExtResource( 2 )
 
-[node name="Cloud8" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 4891, 4531 )
+[node name="Cloud8" type="Sprite" parent="ParallaxBackground/LittleClouds"]
+position = Vector2( 4943, 4840 )
 texture = ExtResource( 2 )
 
 [node name="DroneGroup" type="Node2D" parent="."]
