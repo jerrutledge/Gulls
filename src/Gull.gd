@@ -20,6 +20,7 @@ var acceleration: Vector2 = Vector2.ZERO
 onready var sprite :AnimatedSprite = $AnimatedSprite
 
 func _ready():
+	sprite.play("flap")
 	velocity.x = base_speed
 	target_h_speed = base_speed
 
