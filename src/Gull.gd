@@ -17,6 +17,8 @@ export (float) var v_flattening_factor = 5.0
 var velocity: Vector2 = Vector2.ZERO
 var acceleration: Vector2 = Vector2.ZERO
 
+onready var sprite :AnimatedSprite = $AnimatedSprite
+
 func _ready():
 	velocity.x = base_speed
 	target_h_speed = base_speed
@@ -53,15 +55,31 @@ func _physics_process(_delta):
 		velocity.x += target_h_speed * turning_factor * _delta
 	# execute the calculated movement
 	velocity = move_and_slide(velocity)
+	
+	# face the sprite in the correct direction
+	if velocity.x < 0:
+		sprite.scale.x = -abs(sprite.scale.x)
+	else:
+		sprite.scale.x = abs(sprite.scale.x)
+	# handle animations
+	if dive:
+		sprite.animation = "dive"
+	else:
+		sprite.animation = "flap"
+	# handle rotation
+	var rot = velocity.angle()
+	if velocity.x < 0:
+		rot = velocity.angle() - PI
+	sprite.rotation = rot
 
 func get_inputs():
 	if Input.is_action_just_pressed("right"):
-		if dir < 0:
+		if target_h_speed <= 0:
 			target_h_speed = max(abs(velocity.x), base_speed)
 			print_debug(target_h_speed)
 		dir = 1
 	if Input.is_action_just_pressed("left"):
-		if dir > 0:
+		if target_h_speed >= 0:
 			target_h_speed = -max(abs(velocity.x), base_speed)
 			print_debug(target_h_speed)
 		dir = -1
