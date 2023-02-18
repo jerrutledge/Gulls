@@ -20,7 +20,9 @@ var velocity: Vector2 = Vector2.ZERO
 var acceleration: Vector2 = Vector2.ZERO
 
 onready var sprite :AnimatedSprite = $AnimatedSprite
+onready var camera :Camera2D = $Camera2D
 const deadgull: PackedScene = preload("res://src/DeadGull.tscn")
+const feather_particle: PackedScene = preload("res://src/Feathers.tscn")
 
 func _ready():
 	sprite.play("flap")
@@ -126,12 +128,20 @@ func die():
 	if dead:
 		return
 	dead = true
+	remove_child(camera)
+	#spawn corpse and feathers
 	var corpse = deadgull.instance()
-	get_parent().add_child(corpse)
+	var debris :CPUParticles2D = feather_particle.instance()
+	get_parent().call_deferred("add_child", corpse)
+	get_parent().call_deferred("add_child", debris)
+	get_parent().call_deferred("add_child", camera)
 	corpse.position = position
 	corpse.linear_velocity.x = base_speed / 2 * dir
 	corpse.linear_velocity.y = -40
 	corpse.angular_velocity = 50
+	debris.position = position
+	debris.emitting = true
+	camera.position = position
 	queue_free()
 
 func _on_hazard_area_entered(_area):
