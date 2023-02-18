@@ -35,5 +35,4 @@ angular_velocity_curve = SubResource( 2 )
 damping = 22.97
 angle_random = 1.0
 angle_curve = SubResource( 1 )
-scale_amount = 2.0
 color_ramp = SubResource( 3 )
