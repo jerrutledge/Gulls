@@ -1,41 +1,44 @@
 extends KinematicBody2D
 
-export (float) var base_speed = 500.0
-var dir:int = 1
+var dir: int = 1
 var dive: bool = false
 var rise: bool = false
 var target_h_speed: float
 var dead: bool = false
 
-export (float) var dive_accel = 3000.0
-export (float) var max_rise_speed = 1800.0
-export (float) var rise_accel = 3000.0
-export (float) var rise_h_conversion = 7.0
-export (float) var h_drag = 0.8
-export (float) var turning_factor = 4.0
-export (float) var dive_v_to_h_conversion_ratio = 0.6
-export (float) var v_flattening_factor = 5.0
-
 var velocity: Vector2 = Vector2.ZERO
 var acceleration: Vector2 = Vector2.ZERO
 
-onready var sprite :AnimatedSprite = $AnimatedSprite
-onready var camera :Camera2D = $Camera2D
+export(float) var base_speed = 500.0
+export(float) var dive_accel = 3000.0
+export(float) var max_rise_speed = 1800.0
+export(float) var rise_accel = 3000.0
+export(float) var rise_h_conversion = 7.0
+export(float) var h_drag = 0.8
+export(float) var turning_factor = 4.0
+export(float) var dive_v_to_h_conversion_ratio = 0.6
+export(float) var v_flattening_factor = 5.0
+
+onready var sprite: AnimatedSprite = $AnimatedSprite
+onready var camera: Camera2D = $Camera2D
 const deadgull: PackedScene = preload("res://src/DeadGull.tscn")
 const feather_particle: PackedScene = preload("res://src/Feathers.tscn")
+
 
 func _ready():
 	sprite.play("flap")
 	velocity.x = base_speed
 	target_h_speed = base_speed
 
+
 func _physics_process(delta):
 	# collect inputs
 	get_inputs()
 	# calculate movement
 	process_movement(delta)
-	
+
 	process_animation()
+
 
 func get_inputs():
 	if Input.is_action_just_pressed("right"):
@@ -54,6 +57,7 @@ func get_inputs():
 		rise = true
 	else:
 		rise = false
+
 
 func process_movement(delta):
 	# dive
@@ -82,12 +86,13 @@ func process_movement(delta):
 		else:
 			velocity.y -= rise_accel * delta
 	# turn around
-	if (dir > 0 and velocity.x < target_h_speed):
+	if dir > 0 and velocity.x < target_h_speed:
 		velocity.x += target_h_speed * turning_factor * delta
-	elif (dir < 0 and velocity.x > target_h_speed):
+	elif dir < 0 and velocity.x > target_h_speed:
 		velocity.x += target_h_speed * turning_factor * delta
 	# execute the calculated movement
 	velocity = move_and_slide(velocity)
+
 
 func process_animation():
 	# face the sprite in the correct direction
@@ -124,6 +129,7 @@ func process_animation():
 		rot = velocity.angle() - PI
 	sprite.rotation = rot
 
+
 func die():
 	if dead:
 		return
@@ -131,7 +137,7 @@ func die():
 	remove_child(camera)
 	#spawn corpse and feathers
 	var corpse = deadgull.instance()
-	var debris :CPUParticles2D = feather_particle.instance()
+	var debris: CPUParticles2D = feather_particle.instance()
 	get_parent().call_deferred("add_child", corpse)
 	get_parent().call_deferred("add_child", debris)
 	get_parent().call_deferred("add_child", camera)
@@ -144,14 +150,20 @@ func die():
 	camera.position = position
 	queue_free()
 
+
 func _on_hazard_area_entered(_area):
 	die()
 
-func _on_hazard_area_shape_entered(_area_rid, _area, _area_shape_index, _local_shape_index):
+
+func _on_hazard_area_shape_entered(
+		_area_rid, _area, _area_shape_index, _local_shape_index):
 	die()
+
 
 func _on_hazard_body_entered(_body):
 	die()
 
-func _on_hazard_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
+
+func _on_hazard_body_shape_entered(
+		_body_rid, _body, _body_shape_index, _local_shape_index):
 	die()
