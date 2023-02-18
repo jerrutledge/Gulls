@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background.png" type="Texture" id=2]
@@ -55,6 +55,7 @@ anchor_bottom = 1.0
 margin_right = 2048.0
 margin_bottom = 624.0
 texture = SubResource( 3 )
+
 [node name="Drone" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2810, 638 )
 
