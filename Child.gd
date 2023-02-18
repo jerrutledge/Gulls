@@ -27,11 +27,13 @@ func _process(delta):
 		set_scale(Vector2(1,1))
 
 
-func _on_Vision_area_entered(area):
+func _on_Vision_body_entered(body):
+
 	chasing = true
-	velocity.x *= 2
-	
-	
-func _on_Vision_area_exited(area):
+	velocity.x *= 5
+
+
+func _on_Vision_body_exited(body):
+
 	chasing = false
-	velocity.x /= 2
+	velocity.x /= 5

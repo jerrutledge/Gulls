@@ -14,7 +14,7 @@ texture = ExtResource( 3 )
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 362, 236 )
-base_speed = 50
+base_speed = 150
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enable = true
