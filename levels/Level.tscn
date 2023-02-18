@@ -9,13 +9,12 @@
 radius = 545.206
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.50188, 1 )
 colors = PoolColorArray( 0.501961, 0.870588, 0.917647, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture2D" id=3]
 gradient = SubResource( 2 )
-width = 3000
-height = 3000
+width = 6000
+height = 6000
 fill_to = Vector2( 0, 1 )
 
 [node name="Node2D" type="Node2D"]
@@ -36,10 +35,9 @@ shape = SubResource( 1 )
 position = Vector2( 362, 236 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enable = true
-follow_viewport_scale = 0.5
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -1000 )
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 3000, 0 )
 
