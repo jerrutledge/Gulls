@@ -82,8 +82,8 @@ animations = [ {
 "speed": 0.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 60.0083
+[sub_resource type="CapsuleShape2D" id=18]
+height = 72.0
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 50.0
@@ -101,6 +101,7 @@ radius = 50.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4, 5 )
 frames = SubResource( 1 )
 animation = "flap"
 
@@ -108,7 +109,10 @@ animation = "flap"
 current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+rotation = 1.5708
+shape = SubResource( 18 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="Mobile controls" type="CanvasLayer" parent="."]
 
