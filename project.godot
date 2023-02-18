@@ -50,6 +50,12 @@ down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="SolidObject"
+2d_physics/layer_3="Hazard"
+2d_physics/layer_4="Player"
+
 [mono]
 
 project/assembly_name="Gulls"

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 545.206
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,6 +13,13 @@
 position = Vector2( 707, 483 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Fries"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fries/Area2D"]
+shape = SubResource( 1 )
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 362, 236 )

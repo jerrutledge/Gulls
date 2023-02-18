@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/art/gull/gullflap.png" type="Texture" id=1]
 [ext_resource path="res://src/Gull.gd" type="Script" id=2]
@@ -97,7 +97,12 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id=14]
 radius = 50.0
 
+[sub_resource type="CircleShape2D" id=19]
+radius = 61.0082
+
 [node name="Gull" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -108,7 +113,7 @@ animation = "flap"
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="GullShape" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 18 )
 
@@ -160,3 +165,15 @@ normal = ExtResource( 7 )
 shape = SubResource( 14 )
 action = "down"
 visibility_mode = 1
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+rotation = 1.5708
+shape = SubResource( 19 )
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hazard_area_entered"]
+[connection signal="area_shape_entered" from="Hitbox" to="." method="_on_hazard_area_shape_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hazard_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hazard_body_shape_entered"]

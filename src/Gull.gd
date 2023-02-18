@@ -37,12 +37,10 @@ func get_inputs():
 	if Input.is_action_just_pressed("right"):
 		if target_h_speed <= 0:
 			target_h_speed = max(abs(velocity.x), base_speed)
-			print_debug(target_h_speed)
 		dir = 1
 	if Input.is_action_just_pressed("left"):
 		if target_h_speed >= 0:
 			target_h_speed = -max(abs(velocity.x), base_speed)
-			print_debug(target_h_speed)
 		dir = -1
 	if Input.is_action_pressed("down"):
 		dive = true
@@ -121,3 +119,18 @@ func process_animation():
 	if velocity.x < 0:
 		rot = velocity.angle() - PI
 	sprite.rotation = rot
+
+func die():
+	pass
+
+func _on_hazard_area_entered(_area):
+	die()
+
+func _on_hazard_area_shape_entered(_area_rid, _area, _area_shape_index, _local_shape_index):
+	die()
+
+func _on_hazard_body_entered(_body):
+	die()
+
+func _on_hazard_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
+	die()
