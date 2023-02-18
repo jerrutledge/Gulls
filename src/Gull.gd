@@ -56,7 +56,7 @@ func get_inputs():
 func process_movement(delta):
 	# dive
 	if dive:
-		target_h_speed = 0.0
+		target_h_speed = dir * base_speed
 		# speed downwards
 		velocity.y += dive_accel * delta
 	else:
@@ -68,7 +68,7 @@ func process_movement(delta):
 		velocity.x += accel if velocity.x > 0 else -accel
 	# rise
 	if rise and not dive:
-		target_h_speed = 0.0
+		target_h_speed = dir * base_speed
 		if abs(velocity.x) > base_speed:
 			# lose momentum if rising
 			var accel = (abs(velocity.x) - base_speed) * h_drag * delta
