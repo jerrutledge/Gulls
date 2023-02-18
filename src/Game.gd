@@ -27,7 +27,7 @@ func load_level(level_name):
 	_level_node.name = level_name
 	add_child(_level_node)
 	
-	var playerd = _level_node.get_node("Gull")
+	var _playerd = _level_node.get_node("Gull")
 	current_level_name = level_name
 	
 

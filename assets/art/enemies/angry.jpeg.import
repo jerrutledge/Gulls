@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/angry.jpeg-5ebccce76aaa064ae72143364050edc9.stex"
+path="res://.import/angry.jpeg-3fafe8b2630ec1f63d8a8fc280ac3785.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/angry.jpeg"
-dest_files=[ "res://.import/angry.jpeg-5ebccce76aaa064ae72143364050edc9.stex" ]
+source_file="res://assets/art/enemies/angry.jpeg"
+dest_files=[ "res://.import/angry.jpeg-3fafe8b2630ec1f63d8a8fc280ac3785.stex" ]
 
 [params]
 

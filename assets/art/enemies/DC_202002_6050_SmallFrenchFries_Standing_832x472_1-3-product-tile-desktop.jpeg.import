@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drone.jpg-62e06dab3395d3feb6b7c893462fdf1a.stex"
+path="res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-51bfb396774d68793f418b1f72c1ee95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/drone.jpg"
-dest_files=[ "res://.import/drone.jpg-62e06dab3395d3feb6b7c893462fdf1a.stex" ]
+source_file="res://assets/art/enemies/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg"
+dest_files=[ "res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-51bfb396774d68793f418b1f72c1ee95.stex" ]
 
 [params]
 

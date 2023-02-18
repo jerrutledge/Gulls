@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-366137e366526dd95dc0b128174475b1.stex"
+path="res://.import/flying-seagull-isolated-on-white-260nw-1918933727.webp-06515d4574f26d8b601b3799220d7c40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg"
-dest_files=[ "res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-366137e366526dd95dc0b128174475b1.stex" ]
+source_file="res://assets/art/enemies/flying-seagull-isolated-on-white-260nw-1918933727.webp"
+dest_files=[ "res://.import/flying-seagull-isolated-on-white-260nw-1918933727.webp-06515d4574f26d8b601b3799220d7c40.stex" ]
 
 [params]
 

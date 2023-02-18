@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dexter.jpg-814a6eb72f02ad75da4044aad2f0e5ed.stex"
+path="res://.import/dexter.jpg-8e0956ef615767868fac0589e83c4b1b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/dexter.jpg"
-dest_files=[ "res://.import/dexter.jpg-814a6eb72f02ad75da4044aad2f0e5ed.stex" ]
+source_file="res://assets/art/enemies/dexter.jpg"
+dest_files=[ "res://.import/dexter.jpg-8e0956ef615767868fac0589e83c4b1b.stex" ]
 
 [params]
 

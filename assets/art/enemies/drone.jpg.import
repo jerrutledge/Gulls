@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flying-seagull-isolated-on-white-260nw-1918933727.webp-f4da37886bab58029df002da2fdadf4c.stex"
+path="res://.import/drone.jpg-6fd96ff43eb0c3835e561568d39c0447.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/flying-seagull-isolated-on-white-260nw-1918933727.webp"
-dest_files=[ "res://.import/flying-seagull-isolated-on-white-260nw-1918933727.webp-f4da37886bab58029df002da2fdadf4c.stex" ]
+source_file="res://assets/art/enemies/drone.jpg"
+dest_files=[ "res://.import/drone.jpg-6fd96ff43eb0c3835e561568d39c0447.stex" ]
 
 [params]
 

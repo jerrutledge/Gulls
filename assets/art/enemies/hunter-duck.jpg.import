@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hunter-duck.jpg-33b6b5fa7616f2b81f3af71f3b215c02.stex"
+path="res://.import/hunter-duck.jpg-3bb4b71296ec947cece241f2b8004ddd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/hunter-duck.jpg"
-dest_files=[ "res://.import/hunter-duck.jpg-33b6b5fa7616f2b81f3af71f3b215c02.stex" ]
+source_file="res://assets/art/enemies/hunter-duck.jpg"
+dest_files=[ "res://.import/hunter-duck.jpg-3bb4b71296ec947cece241f2b8004ddd.stex" ]
 
 [params]
 
