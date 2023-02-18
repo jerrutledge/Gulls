@@ -16,7 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	var direction = (gull.position - position).normalized()
-	position += direction * velocity * delta
+	if is_instance_valid(gull):
+		var direction = (gull.position - position).normalized()
+		position += direction * velocity * delta
 	
