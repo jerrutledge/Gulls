@@ -6,13 +6,13 @@ var dive: bool = false
 var rise: bool = false
 var target_h_speed: float
 
-export (float) var dive_accel = 1800.0
+export (float) var dive_accel = 3000.0
 export (float) var max_rise_speed = 1800.0
 export (float) var rise_accel = 3000.0
 export (float) var rise_h_conversion = 7.0
 export (float) var h_drag = 0.8
 export (float) var turning_factor = 4.0
-export (float) var dive_v_to_h_conversion_ratio = 0.5
+export (float) var dive_v_to_h_conversion_ratio = 0.6
 export (float) var v_flattening_factor = 5.0
 
 var velocity: Vector2 = Vector2.ZERO
@@ -54,17 +54,20 @@ func get_inputs():
 		rise = false
 
 func process_movement(delta):
+	# dive
 	if dive:
 		target_h_speed = 0.0
 		# speed downwards
 		velocity.y += dive_accel * delta
-		# gain horizontal speed when diving
-		var accel = dive_accel * delta * dive_v_to_h_conversion_ratio
-		velocity.x += accel if velocity.x > 0 else -accel
 	else:
 		# flatten out
 		velocity.y -= velocity.y * v_flattening_factor * delta
-	if not dive and rise:
+	# gain horizontal speed by air foil
+	if velocity.y > 0:
+		var accel = velocity.y * delta * dive_v_to_h_conversion_ratio
+		velocity.x += accel if velocity.x > 0 else -accel
+	# rise
+	if rise and not dive:
 		target_h_speed = 0.0
 		if abs(velocity.x) > base_speed:
 			# lose momentum if rising
