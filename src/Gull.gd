@@ -63,10 +63,28 @@ func _physics_process(_delta):
 	else:
 		sprite.scale.x = abs(sprite.scale.x)
 	# handle animations
+	var hspd = max(abs(target_h_speed), abs(velocity.x))
+	if abs(velocity.x) < base_speed:
+		hspd = abs(velocity.x)
 	if dive:
 		sprite.animation = "dive"
-	else:
+	elif hspd >= base_speed * 3:
 		sprite.animation = "flap"
+		sprite.frame = 1
+		sprite.playing = false
+	elif hspd < base_speed * 3 and hspd >= base_speed:
+		sprite.speed_scale = hspd / base_speed
+		sprite.animation = "flap"
+		sprite.playing = true
+	elif hspd < base_speed and hspd >= base_speed / 2:
+		sprite.animation = "turn"
+		sprite.frame = 0
+	elif hspd < base_speed / 2 and hspd >= base_speed / 4:
+		sprite.animation = "turn"
+		sprite.frame = 1
+	else:
+		sprite.animation = "turn"
+		sprite.frame = 2
 	# handle rotation
 	var rot = velocity.angle()
 	if velocity.x < 0:

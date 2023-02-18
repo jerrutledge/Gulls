@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/art/gull/gullflap.png" type="Texture" id=1]
 [ext_resource path="res://src/Gull.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/art/ui/up_circle.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/ui/left_circle.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/ui/down_circle.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/gull/gullturn.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -48,6 +49,21 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 1120, 0, 160, 160 )
 
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 480, 0, 160, 160 )
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -58,7 +74,12 @@ animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "flap",
-"speed": 10.0
+"speed": 15.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "turn",
+"speed": 0.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
