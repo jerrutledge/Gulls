@@ -9,6 +9,7 @@ var _level_node = null
 var player = null
 var starting_level_name = "Level"
 var current_level_name
+var level_resource 
 
 onready var _pause_menu = $CanvasLayer/Pause
 onready var _death_screen = $CanvasLayer2/Death
@@ -37,7 +38,9 @@ func load_level(level_name):
 	if not (_level_node == null):
 		_level_node.name = _level_node.name + "old"
 		_level_node.queue_free()
-	_level_node = load("res://levels/" + level_name + ".tscn").instance()
+	if level_name != current_level_name:
+		level_resource = load("res://levels/" + level_name + ".tscn")
+	_level_node = level_resource.instance()
 	_level_node.name = level_name
 	add_child(_level_node)
 	
