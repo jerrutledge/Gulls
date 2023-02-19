@@ -21,12 +21,13 @@ colors = PoolColorArray( 1, 0.905882, 0.615686, 1 )
 [sub_resource type="GradientTexture2D" id=5]
 gradient = SubResource( 4 )
 width = 12000
-height = 3000
+height = 5000
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 362, 236 )
+ZOOM_SPEED = 6
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2( 1, 1 )

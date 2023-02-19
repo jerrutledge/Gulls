@@ -6,6 +6,8 @@ var dir: int = 1
 var dive: bool = false
 var rise: bool = false
 var target_h_speed: float
+var cam_height: float = 1080
+var smooth_zoom = 1
 var dead: bool = false
 
 var velocity: Vector2 = Vector2.ZERO
@@ -24,10 +26,12 @@ export(int) var left_clamp = -3000
 export(int) var right_clamp = 12000
 export(int) var top_clamp = 0
 export(int) var bottom_clamp = 10000
+export(float) var ZOOM_SPEED = 6.0
 export(int) var floor_y = 6000
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
+onready var tween: Tween = $Tween
 const deadgull: PackedScene = preload("res://src/DeadGull.tscn")
 const feather_particle: PackedScene = preload("res://src/Feathers.tscn")
 
@@ -40,6 +44,7 @@ func _ready():
 	camera.limit_right = right_clamp
 	camera.limit_top = top_clamp
 	camera.limit_bottom = bottom_clamp
+	cam_height = ProjectSettings.get_setting("display/window/size/height")
 
 
 func _physics_process(delta):
@@ -108,10 +113,13 @@ func process_movement(delta):
 	position.y = clamp(position.y, top_clamp, floor_y)
 	if position.y >= floor_y:
 		die()
-	else:
-		var cam_height = ProjectSettings.get_setting("display/window/size/height")
-		var zoom = (floor_y + 3000 - position.y) / cam_height
-		camera.zoom = Vector2(zoom, zoom)
+		return
+	var h_fac = floor_y - position.y
+	if position.y < floor_y / 2:
+		h_fac = floor_y/2 + (floor_y/2 - position.y) / 5
+	var target_zoom = max(h_fac / (cam_height/2), 1)
+	smooth_zoom = lerp(smooth_zoom, target_zoom, ZOOM_SPEED * delta)
+	camera.zoom = Vector2(smooth_zoom, smooth_zoom)
 
 
 func process_animation():
