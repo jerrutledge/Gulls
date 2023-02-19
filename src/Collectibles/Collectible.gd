@@ -1,8 +1,11 @@
 extends Area2D
 
+signal collected
+
 var star_scene: PackedScene = preload("res://src/Collectibles/Stars.tscn")
 
 func collect():
+	emit_signal("collected", self)
 	var stars = star_scene.instance()
 	stars.position = position
 	stars.emitting = true
