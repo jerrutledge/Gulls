@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background/cloud.png" type="Texture" id=2]
@@ -13,6 +13,28 @@ width = 6000
 height = 6000
 fill_to = Vector2( 0, 1 )
 
+[sub_resource type="Gradient" id=4]
+interpolation_mode = 1
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 1, 0.905882, 0.615686, 1 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+width = 6000
+height = 3000
+
+[sub_resource type="Gradient" id=7]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=8]
+gradient = SubResource( 7 )
+width = 6000
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6000, 1000 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
@@ -21,11 +43,11 @@ position = Vector2( 362, 236 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2( 1, 1 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 3000, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+[node name="SkyText" type="TextureRect" parent="ParallaxBackground/Sky"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 2048.0
@@ -37,26 +59,27 @@ __meta__ = {
 
 [node name="BigClouds" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color( 1, 1, 1, 0.584314 )
-motion_scale = Vector2( 0.3, 0.4 )
-motion_mirroring = Vector2( 7000, 0 )
+motion_scale = Vector2( 0.5, 0.4 )
+motion_mirroring = Vector2( 6500, 0 )
 
 [node name="Cloud" type="Sprite" parent="ParallaxBackground/BigClouds"]
-position = Vector2( 1739.5, 2391 )
+position = Vector2( 1734, 1424 )
 scale = Vector2( 5.55156, 3.20312 )
 texture = ExtResource( 2 )
 
 [node name="Cloud2" type="Sprite" parent="ParallaxBackground/BigClouds"]
-position = Vector2( 3519, 4104 )
+position = Vector2( 4311, 2426 )
 scale = Vector2( -8.43744, 5.31499 )
 texture = ExtResource( 2 )
 
 [node name="Cloud3" type="Sprite" parent="ParallaxBackground/BigClouds"]
-position = Vector2( 4661, 1385 )
+position = Vector2( 3653, 430 )
 scale = Vector2( 5.66875, 1.8375 )
 texture = ExtResource( 2 )
 
 [node name="LittleClouds" type="ParallaxLayer" parent="ParallaxBackground"]
 self_modulate = Color( 1, 1, 1, 0.803922 )
+motion_scale = Vector2( 0.9, 0.9 )
 motion_mirroring = Vector2( 6000, 0 )
 
 [node name="Cloud" type="Sprite" parent="ParallaxBackground/LittleClouds"]
@@ -97,6 +120,15 @@ texture = ExtResource( 2 )
 position = Vector2( 4943, 4840 )
 texture = ExtResource( 2 )
 
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, 6000 )
+motion_mirroring = Vector2( 6000, 0 )
+
+[node name="GroundText" type="TextureRect" parent="ParallaxBackground/Ground"]
+margin_right = 3437.0
+margin_bottom = 1683.0
+texture = SubResource( 5 )
+
 [node name="DroneGroup" type="Node2D" parent="."]
 
 [node name="Drone" parent="DroneGroup" instance=ExtResource( 5 )]
@@ -116,3 +148,18 @@ position = Vector2( 4038, 2271 )
 
 [node name="Drone6" parent="DroneGroup" instance=ExtResource( 5 )]
 position = Vector2( 1415, 2900 )
+
+[node name="Ground" type="Area2D" parent="."]
+position = Vector2( 0, 6000 )
+collision_layer = 6
+collision_mask = 0
+monitoring = false
+
+[node name="GroundText" type="TextureRect" parent="Ground"]
+margin_right = 6000.0
+margin_bottom = 3000.0
+texture = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 6000, 1000 )
+shape = SubResource( 6 )
