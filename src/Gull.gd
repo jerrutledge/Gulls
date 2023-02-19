@@ -24,6 +24,7 @@ export(int) var left_clamp = -3000
 export(int) var right_clamp = 12000
 export(int) var top_clamp = 0
 export(int) var bottom_clamp = 10000
+export(int) var floor_y = 6000
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
@@ -104,7 +105,14 @@ func process_movement(delta):
 	velocity = move_and_slide(velocity)
 	# clamp position
 	position.x = clamp(position.x, left_clamp, right_clamp)
-	position.y = clamp(position.y, top_clamp, bottom_clamp)    
+	position.y = clamp(position.y, top_clamp, floor_y)
+	if position.y >= floor_y:
+		die()
+	else:
+		var cam_height = ProjectSettings.get_setting("display/window/size/height")
+		var zoom = (floor_y + 3000 - position.y) / cam_height
+		camera.zoom = Vector2(zoom, zoom)
+
 
 func process_animation():
 	# face the sprite in the correct direction
