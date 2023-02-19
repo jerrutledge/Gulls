@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Gulls"
 run/main_scene="res://src/Game/Game.tscn"
-boot_splash/image="res://icon.png"
+boot_splash/image="res://assets/art/ui/exclamigull.png"
 boot_splash/bg_color=Color( 0.784314, 0.894118, 0.905882, 1 )
 config/icon="res://icon.png"
 

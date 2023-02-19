@@ -5,16 +5,22 @@ var player: KinematicBody2D = null
 export(String) var starting_level_name = "Level"
 var current_level_name: String
 var level_resource: PackedScene
+export var levels = ["Tutorial"]
 
 onready var _pause_menu = $PauseLayer/Pause
 onready var _death_screen = $DeathLayer/Death
 onready var timer: ColorRect = $HUD/TimerRect
 onready var success_screen: CanvasLayer = $SuccessLayer
+onready var level_selector: OptionButton = $PauseLayer/LevelSelect
 
 func _ready():
 	load_level(starting_level_name)
 	_pause_menu.connect("restart", self, "_restart_level")
 	reset_default_visibilities()
+	var i: int = 0
+	for level in levels:
+		level_selector.add_item(level, i)
+		i += 1
 
 func _input(event):
 	if event.is_action_pressed("restart"):
@@ -26,6 +32,7 @@ func _restart_level():
 	
 func _on_player_death():
 	_death_screen.show()
+	level_selector.show()
 
 func load_level(level_name):
 	reset_default_visibilities()
@@ -46,6 +53,7 @@ func load_level(level_name):
 func finish_level():
 	get_tree().paused = true
 	success_screen.show()
+	level_selector.show()
 
 func next_level():
 	if _level_node.has_method("get_next_level"):
@@ -63,3 +71,7 @@ func reset_default_visibilities():
 	_pause_menu.hide()
 	_death_screen.hide()
 	success_screen.hide()
+	level_selector.hide()
+
+func _on_LevelSelect_item_selected(index):
+	load_level(levels[index])

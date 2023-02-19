@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Game/Timer.gd" type="Script" id=5]
 [ext_resource path="res://assets/art/ui/restart.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
+[ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
 
 [sub_resource type="DynamicFont" id=3]
 size = 200
@@ -14,10 +15,6 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 60
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -108,7 +105,7 @@ margin_left = -125.0
 margin_top = 300.0
 margin_right = 125.0
 margin_bottom = 375.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 8 )
 text = "NEXT LEVEL"
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
@@ -140,6 +137,17 @@ margin_right = 1205.0
 margin_bottom = 696.0
 custom_fonts/font = SubResource( 2 )
 text = "Press 'R' to Restart"
+
+[node name="LevelSelect" type="OptionButton" parent="PauseLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -139.5
+margin_top = -54.0
+margin_right = 139.5
+custom_fonts/font = ExtResource( 8 )
+text = "Level Selector"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -194,3 +202,4 @@ visibility_mode = 1
 
 [connection signal="button_down" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
 [connection signal="pressed" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
+[connection signal="item_selected" from="PauseLayer/LevelSelect" to="." method="_on_LevelSelect_item_selected"]
