@@ -12,6 +12,8 @@ config_version=4
 
 config/name="Gulls"
 run/main_scene="res://src/Game/Game.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/bg_color=Color( 0.784314, 0.894118, 0.905882, 1 )
 config/icon="res://icon.png"
 
 [display]
@@ -82,4 +84,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.501961, 0.870588, 0.917647, 1 )
 environment/default_environment="res://default_env.tres"

@@ -7,12 +7,13 @@ extends Node2D
 # var b = "text"
 var _level_node = null
 var player = null
-var starting_level_name = "Level"
+export(String) var starting_level_name = "Tutorial"
 var current_level_name
 var level_resource 
 
 onready var _pause_menu = $CanvasLayer/Pause
 onready var _death_screen = $CanvasLayer2/Death
+onready var timer = $HUD/TimerRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,5 +49,6 @@ func load_level(level_name):
 	player.connect("died", self, "_on_player_death")
 	current_level_name = level_name
 	_death_screen.hide()
+	timer.reset()
 	
 
