@@ -39,7 +39,7 @@ func load_level(level_name):
 	add_child(_level_node)
 	
 	player = _level_node.get_node("Gull")
-	player.connect("died", self, "_on_player_death")
+	var _idc = player.connect("died", self, "_on_player_death")
 	current_level_name = level_name
 	timer.reset()
 
