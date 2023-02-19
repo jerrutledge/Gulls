@@ -1,5 +1,6 @@
 extends Control
 
+signal restart
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,3 +20,12 @@ func _input(event):
 			show()
 		else:
 			hide()
+			
+			
+func _unhandled_input(event):
+	if event.is_action_pressed("restart"):
+		var tree = get_tree()
+		if tree.paused:
+			tree.paused = false
+			hide()
+		emit_signal("restart")
