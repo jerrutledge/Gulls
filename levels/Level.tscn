@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/Gull.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background/cloud.png" type="Texture" id=2]
-[ext_resource path="res://src/Drone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Enemies/Drone.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 0.501961, 0.870588, 0.917647, 1, 1, 1, 1, 1 )
@@ -23,11 +24,10 @@ gradient = SubResource( 4 )
 width = 12000
 height = 5000
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 362, 236 )
-ZOOM_SPEED = 6
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2( 1, 1 )
@@ -177,3 +177,5 @@ position = Vector2( 4038, 2271 )
 
 [node name="Drone6" parent="DroneGroup" instance=ExtResource( 5 )]
 position = Vector2( 1415, 2900 )
+
+[node name="Collectible" parent="." instance=ExtResource( 3 )]

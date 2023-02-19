@@ -32,8 +32,8 @@ export(int) var floor_y = 6000
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
 onready var tween: Tween = $Tween
-const deadgull: PackedScene = preload("res://src/DeadGull.tscn")
-const feather_particle: PackedScene = preload("res://src/Feathers.tscn")
+const deadgull: PackedScene = preload("res://src/Gull/DeadGull.tscn")
+const feather_particle: PackedScene = preload("res://src/Gull/Feathers.tscn")
 
 
 func _ready():
