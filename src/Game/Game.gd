@@ -13,6 +13,7 @@ var level_resource
 
 onready var _pause_menu = $CanvasLayer/Pause
 onready var _death_screen = $CanvasLayer2/Death
+onready var timer = $HUD/TimerRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,5 +49,6 @@ func load_level(level_name):
 	player.connect("died", self, "_on_player_death")
 	current_level_name = level_name
 	_death_screen.hide()
+	timer.reset()
 	
 
