@@ -3,10 +3,7 @@
 [ext_resource path="res://src/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Roboto-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/Game/Pause.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 200
-font_data = ExtResource( 2 )
+[ext_resource path="res://assets/font/PauseFont.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -41,7 +38,7 @@ margin_left = 639.0
 margin_top = 387.0
 margin_right = 1399.0
 margin_bottom = 860.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "PAUSE
 "
 
