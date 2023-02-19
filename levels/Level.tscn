@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background/cloud.png" type="Texture" id=2]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=4]
 [ext_resource path="res://src/Enemies/Drone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Enemies/Shooter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Enemies/Rocketeer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 0.501961, 0.870588, 0.917647, 1, 1, 1, 1, 1 )
@@ -29,7 +31,7 @@ height = 5000
 script = ExtResource( 4 )
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
-position = Vector2( 362, 236 )
+position = Vector2( 4717, 3616 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2( 1, 1 )
@@ -184,3 +186,19 @@ position = Vector2( 1415, 2900 )
 position = Vector2( 6086, 5878 )
 rotation = 0.169297
 scale = Vector2( 5, 5 )
+
+[node name="ShooterGroup" type="Node2D" parent="."]
+
+[node name="Shooter" parent="ShooterGroup" instance=ExtResource( 6 )]
+position = Vector2( 3779, 4041 )
+
+[node name="Shooter2" parent="ShooterGroup" instance=ExtResource( 6 )]
+position = Vector2( 5666, 3592 )
+
+[node name="RocketeerGroup" type="Node2D" parent="."]
+
+[node name="Rocketeer" parent="RocketeerGroup" instance=ExtResource( 7 )]
+position = Vector2( 3232, 5910 )
+
+[node name="Rocketeer2" parent="RocketeerGroup" instance=ExtResource( 7 )]
+position = Vector2( 8893, 5927 )
