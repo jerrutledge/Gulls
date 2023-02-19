@@ -8,10 +8,6 @@
 [ext_resource path="res://assets/art/ui/restart.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=2]
-size = 60
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 200
 font_data = ExtResource( 2 )
@@ -24,56 +20,30 @@ font_data = ExtResource( 2 )
 size = 40
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=6]
 size = 48
 font_data = ExtResource( 2 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-starting_level_name = "Level"
+starting_level_name = "Tutorial"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="DeathLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause" type="Control" parent="CanvasLayer"]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause"]
-margin_left = 639.0
-margin_top = 387.0
-margin_right = 1399.0
-margin_bottom = 860.0
-custom_fonts/font = ExtResource( 4 )
-text = "PAUSE
-"
-
-[node name="Label2" type="Label" parent="CanvasLayer/Pause"]
-margin_left = 703.0
-margin_top = 625.0
-margin_right = 1205.0
-margin_bottom = 696.0
-custom_fonts/font = SubResource( 2 )
-text = "Press 'R' to Restart"
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Death" type="Control" parent="CanvasLayer2"]
+[node name="Death" type="Control" parent="DeathLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Death"]
+[node name="ColorRect" type="ColorRect" parent="DeathLayer/Death"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
 
-[node name="Label" type="Label" parent="CanvasLayer2/Death"]
+[node name="Label" type="Label" parent="DeathLayer/Death"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -85,7 +55,7 @@ margin_bottom = 84.0
 custom_fonts/font = SubResource( 3 )
 text = "YOU DIED"
 
-[node name="Label2" type="Label" parent="CanvasLayer2/Death"]
+[node name="Label2" type="Label" parent="DeathLayer/Death"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -98,7 +68,6 @@ custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
 [node name="SuccessLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="SuccessLayer"]
 anchor_right = 1.0
@@ -130,6 +99,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
 [node name="Button" type="Button" parent="SuccessLayer/ColorRect"]
+pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -140,6 +110,36 @@ margin_right = 125.0
 margin_bottom = 375.0
 custom_fonts/font = SubResource( 5 )
 text = "NEXT LEVEL"
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="Control" parent="PauseLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
+
+[node name="Label" type="Label" parent="PauseLayer/Pause"]
+margin_left = 639.0
+margin_top = 387.0
+margin_right = 1399.0
+margin_bottom = 860.0
+custom_fonts/font = ExtResource( 4 )
+text = "PAUSE
+"
+
+[node name="Label2" type="Label" parent="PauseLayer/Pause"]
+margin_left = 703.0
+margin_top = 625.0
+margin_right = 1205.0
+margin_bottom = 696.0
+custom_fonts/font = SubResource( 2 )
+text = "Press 'R' to Restart"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -185,6 +185,7 @@ margin_left = -40.0
 margin_bottom = 40.0
 
 [node name="RestartButton" type="TouchScreenButton" parent="HUD/RestartControl"]
+pause_mode = 2
 position = Vector2( -140, 30 )
 scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 6 )

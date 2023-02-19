@@ -1,19 +1,20 @@
 extends Node2D
 
 var _level_node: Node2D = null
-var player = null
+var player: KinematicBody2D = null
 export(String) var starting_level_name = "Level"
-var current_level_name
-var level_resource 
+var current_level_name: String
+var level_resource: PackedScene
 
-onready var _pause_menu = $CanvasLayer/Pause
-onready var _death_screen = $CanvasLayer2/Death
-onready var timer = $HUD/TimerRect
+onready var _pause_menu = $PauseLayer/Pause
+onready var _death_screen = $DeathLayer/Death
+onready var timer: ColorRect = $HUD/TimerRect
+onready var success_screen: CanvasLayer = $SuccessLayer
 
 func _ready():
 	load_level(starting_level_name)
 	_pause_menu.connect("restart", self, "_restart_level")
-
+	reset_default_visibilities()
 
 func _input(event):
 	if event.is_action_pressed("restart"):
@@ -27,7 +28,7 @@ func _on_player_death():
 	_death_screen.show()
 
 func load_level(level_name):
-	get_tree().paused = false
+	reset_default_visibilities()
 	if not (_level_node == null):
 		_level_node.name = _level_node.name + "old"
 		_level_node.queue_free()
@@ -40,17 +41,25 @@ func load_level(level_name):
 	player = _level_node.get_node("Gull")
 	player.connect("died", self, "_on_player_death")
 	current_level_name = level_name
-	_death_screen.hide()
 	timer.reset()
 
 func finish_level():
 	get_tree().paused = true
-	$SuccessLayer.visible = true
+	success_screen.show()
 
 func next_level():
 	if _level_node.has_method("get_next_level"):
 		var new_level = _level_node.get_next_level()
-		print_debug(new_level)
-		load_level(new_level)
+		print_debug("new level: '", new_level, "'")
+		if new_level:
+			load_level(new_level)
+		else:
+			print_debug("No new level :(")
 	else:
 		print_debug("Can't get new level")
+
+func reset_default_visibilities():
+	get_tree().paused = false
+	_pause_menu.hide()
+	_death_screen.hide()
+	success_screen.hide()
