@@ -20,7 +20,7 @@ func _ready():
 	update_item_progress()
 	var par = get_parent()
 	if par and par.has_method("finish_level"):
-		connect("all_collectibles_collected", par, "finish_level")
+		var _idc = connect("all_collectibles_collected", par, "finish_level")
 
 func on_item_collected(item_collected):
 	var index = items.find(item_collected)
