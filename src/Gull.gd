@@ -20,6 +20,10 @@ export(float) var h_drag = 0.8
 export(float) var turning_factor = 4.0
 export(float) var dive_v_to_h_conversion_ratio = 0.6
 export(float) var v_flattening_factor = 5.0
+export(int) var left_clamp = -3000
+export(int) var right_clamp = 12000
+export(int) var top_clamp = 0
+export(int) var bottom_clamp = 10000
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
@@ -31,6 +35,10 @@ func _ready():
 	sprite.play("flap")
 	velocity.x = base_speed
 	target_h_speed = base_speed
+	camera.limit_left = left_clamp
+	camera.limit_right = right_clamp
+	camera.limit_top = top_clamp
+	camera.limit_bottom = bottom_clamp
 
 
 func _physics_process(delta):
@@ -94,7 +102,9 @@ func process_movement(delta):
 		velocity.x += target_h_speed * turning_factor * delta
 	# execute the calculated movement
 	velocity = move_and_slide(velocity)
-
+	# clamp position
+	position.x = clamp(position.x, left_clamp, right_clamp)
+	position.y = clamp(position.y, top_clamp, bottom_clamp)    
 
 func process_animation():
 	# face the sprite in the correct direction

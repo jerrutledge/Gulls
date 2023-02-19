@@ -97,8 +97,9 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id=14]
 radius = 50.0
 
-[sub_resource type="CircleShape2D" id=19]
-radius = 61.0082
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 18.9999
+height = 74.0002
 
 [node name="Gull" type="KinematicBody2D" groups=["Player"]]
 collision_layer = 0
@@ -112,6 +113,9 @@ animation = "flap"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = -3000
+limit_top = 0
+limit_right = 12000
 
 [node name="GullShape" type="CollisionShape2D" parent="."]
 rotation = 1.5708
