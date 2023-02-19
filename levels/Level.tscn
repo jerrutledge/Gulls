@@ -30,10 +30,11 @@ colors = PoolColorArray( 0, 0, 0, 1 )
 
 [sub_resource type="GradientTexture2D" id=8]
 gradient = SubResource( 7 )
-width = 6000
+width = 12000
+height = 1000
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 6000, 1000 )
+extents = Vector2( 12000, 1000 )
 
 [node name="Node2D" type="Node2D"]
 
