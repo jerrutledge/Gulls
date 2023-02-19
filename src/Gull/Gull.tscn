@@ -1,0 +1,184 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://src/Gull/Gull.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/ui/right_circle.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/gull/gullflap.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/gull/gulldive.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/ui/up_circle.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/ui/left_circle.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/ui/down_circle.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/gull/gullturn.png" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 800, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 960, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1120, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "dive",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "flap",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "turn",
+"speed": 0.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=18]
+height = 72.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=14]
+radius = 50.0
+
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 18.9999
+height = 74.0002
+
+[node name="Gull" type="KinematicBody2D" groups=["Player"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4, 5 )
+frames = SubResource( 1 )
+animation = "flap"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -3000
+limit_top = 0
+limit_right = 12000
+
+[node name="GullShape" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 18 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Mobile controls" type="CanvasLayer" parent="."]
+
+[node name="Spacer" type="Control" parent="Mobile controls"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+
+[node name="LeftButton" type="TouchScreenButton" parent="Mobile controls/Spacer"]
+self_modulate = Color( 1, 1, 1, 0.811765 )
+position = Vector2( -350, -150 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 6 )
+shape = SubResource( 11 )
+action = "left"
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="Mobile controls/Spacer"]
+self_modulate = Color( 1, 1, 1, 0.811765 )
+position = Vector2( 200, -150 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 2 )
+shape = SubResource( 12 )
+action = "right"
+visibility_mode = 1
+
+[node name="UpButton" type="TouchScreenButton" parent="Mobile controls/Spacer"]
+self_modulate = Color( 1, 1, 1, 0.811765 )
+position = Vector2( 25, -150 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 5 )
+shape = SubResource( 13 )
+action = "up"
+visibility_mode = 1
+
+[node name="DownButton" type="TouchScreenButton" parent="Mobile controls/Spacer"]
+self_modulate = Color( 1, 1, 1, 0.811765 )
+position = Vector2( -175, -150 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 7 )
+shape = SubResource( 14 )
+action = "down"
+visibility_mode = 1
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+rotation = 1.5708
+shape = SubResource( 19 )
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hazard_area_entered"]
+[connection signal="area_shape_entered" from="Hitbox" to="." method="_on_hazard_area_shape_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hazard_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hazard_body_shape_entered"]

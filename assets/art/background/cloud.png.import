@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-366137e366526dd95dc0b128174475b1.stex"
+path="res://.import/cloud.png-397e7f8bbad85ca9d6ff19a58e2373fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg"
-dest_files=[ "res://.import/DC_202002_6050_SmallFrenchFries_Standing_832x472_1-3-product-tile-desktop.jpeg-366137e366526dd95dc0b128174475b1.stex" ]
+source_file="res://assets/art/background/cloud.png"
+dest_files=[ "res://.import/cloud.png-397e7f8bbad85ca9d6ff19a58e2373fc.stex" ]
 
 [params]
 
