@@ -30,6 +30,7 @@ font_data = ExtResource( 2 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
+starting_level_name = "Level"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -189,3 +190,6 @@ scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 6 )
 action = "restart"
 visibility_mode = 1
+
+[connection signal="button_down" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
+[connection signal="pressed" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]

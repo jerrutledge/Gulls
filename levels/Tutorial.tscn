@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/background/cloud.png" type="Texture" id=2]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/font/TutorialFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/Game/Level.gd" type="Script" id=5]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 0.501961, 0.870588, 0.917647, 1, 1, 1, 1, 1 )
@@ -15,6 +16,8 @@ height = 6000
 fill_to = Vector2( 0, 1 )
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 5 )
+next_level_name = "Level"
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 336, 2857 )
