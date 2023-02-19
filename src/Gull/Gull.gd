@@ -22,6 +22,7 @@ export(float) var h_drag = 0.8
 export(float) var turning_factor = 4.0
 export(float) var dive_v_to_h_conversion_ratio = 0.6
 export(float) var v_flattening_factor = 5.0
+export(bool) var has_floor = true
 export(int) var left_clamp = -3000
 export(int) var right_clamp = 12000
 export(int) var top_clamp = 0
@@ -110,10 +111,13 @@ func process_movement(delta):
 	velocity = move_and_slide(velocity)
 	# clamp position
 	position.x = clamp(position.x, left_clamp, right_clamp)
-	position.y = clamp(position.y, top_clamp, floor_y)
-	if position.y >= floor_y:
+	position.y = clamp(position.y, top_clamp, floor_y if has_floor else bottom_clamp)
+	if has_floor and position.y >= floor_y:
 		die()
 		return
+	if !has_floor:
+		return
+	# set camera zoom to keep floor in view
 	var h_fac = floor_y - position.y
 	if position.y < floor_y / 2:
 		h_fac = floor_y/2 + (floor_y/2 - position.y) / 5
