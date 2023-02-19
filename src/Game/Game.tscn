@@ -170,6 +170,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="PauseButton" type="TouchScreenButton" parent="HUD/PauseControl"]
+pause_mode = 2
 position = Vector2( 30, 30 )
 scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 7 )

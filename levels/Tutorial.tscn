@@ -30,6 +30,23 @@ scroll_offset = Vector2( 1, 1 )
 motion_scale = Vector2( 0, 1 )
 motion_mirroring = Vector2( 12000, 0 )
 
+[node name="SkyFallback" type="ColorRect" parent="ParallaxBackground/Sky"]
+margin_right = 6000.0
+margin_bottom = 6000.0
+color = Color( 0.501961, 0.870588, 0.917647, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SkyFallback2" type="ColorRect" parent="ParallaxBackground/Sky"]
+margin_left = 4096.0
+margin_right = 6000.0
+margin_bottom = 6000.0
+color = Color( 0.501961, 0.870588, 0.917647, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="SkyTexture" type="TextureRect" parent="ParallaxBackground/Sky"]
 anchor_right = 1.0
 anchor_bottom = 1.0
