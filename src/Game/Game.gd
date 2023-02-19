@@ -7,7 +7,7 @@ extends Node2D
 # var b = "text"
 var _level_node = null
 var player = null
-export(String) var starting_level_name = "Tutorial"
+export(String) var starting_level_name = "Level"
 var current_level_name
 var level_resource 
 
@@ -42,7 +42,7 @@ func load_level(level_name):
 	if level_name != current_level_name:
 		level_resource = load("res://levels/" + level_name + ".tscn")
 	_level_node = level_resource.instance()
-	_level_node.name = level_name
+	_level_node.name = "Level" #I currently find the Gull with a hardcoded path through 'Level'
 	add_child(_level_node)
 	
 	player = _level_node.get_node("Gull")
