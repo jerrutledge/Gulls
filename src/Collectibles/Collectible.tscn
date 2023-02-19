@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Collectibles/Collectible.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 19, 19 )
+extents = Vector2( 29, 31 )
 
 [node name="Collectible" type="Area2D"]
 collision_layer = 16
@@ -16,3 +16,6 @@ shape = SubResource( 6 )
 
 [node name="Fries" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_Player_body_shape_entered"]

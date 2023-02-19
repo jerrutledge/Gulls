@@ -179,3 +179,6 @@ position = Vector2( 4038, 2271 )
 position = Vector2( 1415, 2900 )
 
 [node name="Collectible" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6086, 5878 )
+rotation = 0.169297
+scale = Vector2( 5, 5 )
