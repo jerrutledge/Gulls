@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Game/Level.gd" type="Script" id=1]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Enemies/Drone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Enemies/Shooter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Gull" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1938, 3812 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="DroneGroup" type="Node2D" parent="."]
+
+[node name="Drone" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 11086, 5183 )
+
+[node name="Drone2" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 3966, 5171 )
+
+[node name="Drone3" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 7261, 4140 )
+
+[node name="Drone4" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 10217, 4308 )
+
+[node name="Drone5" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 8991, 4597 )
+
+[node name="Drone6" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 4671, 4371 )
+
+[node name="Drone7" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 6888, 3009 )
+
+[node name="Drone8" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 12687, 4987 )
+
+[node name="Drone9" parent="DroneGroup" instance=ExtResource( 3 )]
+position = Vector2( 10890, 3220 )
+
+[node name="ShooterGroup" type="Node2D" parent="."]
+
+[node name="Shooter" parent="ShooterGroup" instance=ExtResource( 5 )]
+position = Vector2( 12946, 3014 )
+
+[node name="Shooter2" parent="ShooterGroup" instance=ExtResource( 5 )]
+position = Vector2( 14124, 4373 )
+
+[node name="CollectibleGroup" type="Node2D" parent="."]
+
+[node name="Collectible" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 7914, 5908 )
+rotation = 0.169297
+scale = Vector2( 5, 5 )
+
+[node name="Collectible2" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 13175, 5937 )
+rotation = 0.169297
+scale = Vector2( 5, 5 )
+
+[node name="Collectible3" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 2597, 5893 )
+rotation = 0.169297
+scale = Vector2( 5, 5 )

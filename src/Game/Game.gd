@@ -7,7 +7,7 @@ extends Node2D
 # var b = "text"
 var _level_node = null
 var player = null
-export(String) var starting_level_name = "Level"
+export(String) var starting_level_name = "Level2"
 var current_level_name
 var level_resource 
 
