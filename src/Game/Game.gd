@@ -14,6 +14,8 @@ onready var _death_screen = $DeathLayer/Death
 onready var timer: ColorRect = $HUD/TimerRect
 onready var success_screen: CanvasLayer = $SuccessLayer
 onready var level_selector: Control = $PauseLayer/LevelSelect
+onready var hi_score: Control = $PauseLayer/HiScore
+onready var hi_score_scores: GridContainer = $PauseLayer/HiScore/Scores
 onready var score_display: Label = $HUD/TimerRect/VBoxContainer/Score
 
 func _ready():
@@ -21,11 +23,13 @@ func _ready():
 	_pause_menu.connect("restart", self, "_restart_level")
 	reset_default_visibilities()
 	for level in levels:
+		times_dict[level] = 999.0
 		var lvl_button = Button.new()
 		lvl_button.text = level
 		lvl_button.connect("pressed", self, "load_level", [level])
 		lvl_button.pause_mode = Node.PAUSE_MODE_PROCESS
 		level_selector.add_child(lvl_button)
+	update_hi_score()
 
 func _input(event):
 	if event.is_action_pressed("restart"):
@@ -38,6 +42,7 @@ func _restart_level():
 func _on_player_death():
 	_death_screen.show()
 	level_selector.show()
+	hi_score.show()
 
 func load_level(level_name):
 	if loading:
@@ -64,10 +69,12 @@ func load_level(level_name):
 
 func finish_level():
 	get_tree().paused = true
-	var time = timer.get_time()
+	var time: float = timer.get_time()
 	print_debug(time)
+	update_time(current_level_name, time)
 	success_screen.show()
 	level_selector.show()
+	hi_score.show()
 	if not _level_node.has_method("get_next_level") or _level_node.get_next_level() == "":
 		#stop
 		pass
@@ -89,6 +96,27 @@ func reset_default_visibilities():
 	_death_screen.hide()
 	success_screen.hide()
 	level_selector.hide()
+	hi_score.hide()
 
 func _on_score_update(score):
 	score_display.text = score
+
+func update_hi_score():
+	# remove previous results
+	for child in hi_score_scores.get_children():
+		child.queue_free()
+	for level in times_dict.keys():
+		var level_label = Label.new()
+		level_label.text = level
+		hi_score_scores.add_child(level_label)
+		var time_label = Label.new()
+		time_label.text = "%.3f" % [times_dict[level]]
+		if times_dict[level] == 999.0:
+			time_label.text = "N/A"
+		hi_score_scores.add_child(time_label)
+
+func update_time(level, time):
+	var curtime = times_dict[level]
+	if curtime == 999.0 or curtime > time:
+		times_dict[level] = time
+		update_hi_score()
