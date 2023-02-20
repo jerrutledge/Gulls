@@ -159,6 +159,21 @@ position = Vector2( 9668, 4051 )
 [node name="Drone10" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 8475, 4142 )
 
+[node name="Drone11" parent="DroneGroup" instance=ExtResource( 6 )]
+position = Vector2( 3457, 3235 )
+
+[node name="Drone12" parent="DroneGroup" instance=ExtResource( 6 )]
+position = Vector2( 2696, 3814 )
+
+[node name="Drone13" parent="DroneGroup" instance=ExtResource( 6 )]
+position = Vector2( 4441, 3210 )
+
+[node name="Drone14" parent="DroneGroup" instance=ExtResource( 6 )]
+position = Vector2( 1239, 4702 )
+
+[node name="Drone15" parent="DroneGroup" instance=ExtResource( 6 )]
+position = Vector2( 4537, 3806 )
+
 [node name="RocketeerGroup" type="Node2D" parent="."]
 
 [node name="Rocketeer" parent="RocketeerGroup" instance=ExtResource( 5 )]
