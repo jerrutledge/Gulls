@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Game/Level.gd" type="Script" id=1]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Game/TreeBush.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Game/Trunk.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+next_level_name = "Level2"
+
+[node name="Gull" parent="." instance=ExtResource( 7 )]
+position = Vector2( 675, 3908 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="DroneGroup" type="Node2D" parent="."]
+
+[node name="ShooterGroup" type="Node2D" parent="."]
+
+[node name="CollectibleGroup" type="Node2D" parent="."]
+
+[node name="Collectible" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 6178, 4119 )
+rotation = 0.169297
+
+[node name="Collectible2" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 11019, 5888 )
+rotation = 0.169297
+
+[node name="Collectible3" parent="CollectibleGroup" instance=ExtResource( 4 )]
+position = Vector2( 2307, 5862 )
+rotation = 0.169297
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree" type="Node2D" parent="Trees"]
+
+[node name="Trunk" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 3726, 5847 )
+
+[node name="Trunk2" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 3733, 5012 )
+
+[node name="Trunk5" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 3727, 5309 )
+
+[node name="Trunk4" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 3728, 4734 )
+
+[node name="TreeBush" parent="Trees/Tree" instance=ExtResource( 3 )]
+position = Vector2( 3708, 4472 )
+
+[node name="TreeBush4" parent="Trees/Tree" instance=ExtResource( 3 )]
+position = Vector2( 3694, 5568 )
+
+[node name="Trunk3" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 3969, 5578 )
+rotation = 1.53065
+
+[node name="Trunk6" parent="Trees/Tree" instance=ExtResource( 5 )]
+position = Vector2( 4155, 5460 )
+
+[node name="TreeBush2" parent="Trees/Tree" instance=ExtResource( 3 )]
+position = Vector2( 4151, 5193 )
+
+[node name="Tree2" type="Node2D" parent="Trees"]
+
+[node name="Trunk" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 6182, 5849 )
+
+[node name="Trunk2" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 6189, 5014 )
+
+[node name="Trunk5" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 6183, 5311 )
+
+[node name="Trunk4" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 6184, 4736 )
+
+[node name="TreeBush" parent="Trees/Tree2" instance=ExtResource( 3 )]
+position = Vector2( 6184, 4872 )
+
+[node name="TreeBush4" parent="Trees/Tree2" instance=ExtResource( 3 )]
+position = Vector2( 6150, 5570 )
+
+[node name="Trunk3" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 5965, 5171 )
+rotation = 1.53065
+
+[node name="Trunk6" parent="Trees/Tree2" instance=ExtResource( 5 )]
+position = Vector2( 5753, 5074 )
+
+[node name="TreeBush2" parent="Trees/Tree2" instance=ExtResource( 3 )]
+position = Vector2( 5698, 4817 )
+
+[node name="TreeBush3" parent="Trees/Tree2" instance=ExtResource( 3 )]
+position = Vector2( 6174, 4446 )
+
+[node name="Tree3" type="Node2D" parent="Trees"]
+
+[node name="Trunk" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9468, 5858 )
+
+[node name="Trunk2" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9475, 5023 )
+
+[node name="Trunk5" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9469, 5320 )
+
+[node name="Trunk4" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9470, 4745 )
+
+[node name="TreeBush" parent="Trees/Tree3" instance=ExtResource( 3 )]
+position = Vector2( 9450, 4914 )
+
+[node name="TreeBush4" parent="Trees/Tree3" instance=ExtResource( 3 )]
+position = Vector2( 9436, 5579 )
+
+[node name="Trunk3" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9711, 5589 )
+rotation = 1.53065
+
+[node name="Trunk6" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9897, 5471 )
+
+[node name="TreeBush2" parent="Trees/Tree3" instance=ExtResource( 3 )]
+position = Vector2( 9893, 5204 )
+
+[node name="Trunk7" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9155, 5598 )
+rotation = 1.53065
+
+[node name="Trunk8" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 8933, 5501 )
+
+[node name="TreeBush3" parent="Trees/Tree3" instance=ExtResource( 3 )]
+position = Vector2( 8949, 5201 )
+
+[node name="Trunk9" parent="Trees/Tree3" instance=ExtResource( 5 )]
+position = Vector2( 9484, 4440 )
+
+[node name="TreeBush5" parent="Trees/Tree3" instance=ExtResource( 3 )]
+position = Vector2( 9464, 4178 )

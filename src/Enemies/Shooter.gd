@@ -1,13 +1,14 @@
 extends KinematicBody2D
-
+onready var bulletScene = preload("res://src/Enemies/Bullet.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
-var velocity = 450
+var velocity = 50
 var gull
-var pursuit_radius = 4000
+var shooting_interval = 3.5
+var shooting_timer = 0
+var pursuit_radius = 3500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,4 +23,12 @@ func _process(delta):
 			return 
 		var direction = (gull.position - position).normalized()
 		position += direction * velocity * delta
+		shooting_timer += delta
+		if shooting_timer > shooting_interval:
+			shooting_timer -= shooting_interval
+			var bullet = bulletScene.instance()
+			bullet.position = position
+			bullet.direction = (gull.position - position).normalized()
+			get_parent().add_child(bullet)
+			
 	

@@ -1,0 +1,214 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Game/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/font/TutorialFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/Game/Level.gd" type="Script" id=5]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 5 )
+next_level_name = "Level1"
+
+[node name="Gull" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 2857 )
+has_floor = false
+left_clamp = -12000
+right_clamp = 50000
+bottom_clamp = 6000
+fixed_zoom = 1.2
+
+[node name="SkyBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="TutorialText" type="ParallaxBackground" parent="."]
+
+[node name="Too-Far-Right" type="ParallaxLayer" parent="TutorialText"]
+motion_scale = Vector2( 0.265, 0.01 )
+
+[node name="Label" type="Label" parent="TutorialText/Too-Far-Right"]
+margin_left = 12184.0
+margin_top = -268.0
+margin_right = 14938.0
+margin_bottom = 7.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Miss any food?
+Tap Left or Right to change directions"
+
+[node name="Height-Ind" type="ParallaxLayer" parent="TutorialText"]
+motion_scale = Vector2( 0.025, 1 )
+
+[node name="Label" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -454.0
+margin_top = 2975.0
+margin_right = 2300.0
+margin_bottom = 3250.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Press Down (arrow key) to dive"
+
+[node name="Label6" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -337.0
+margin_top = 478.0
+margin_right = 2417.0
+margin_bottom = 753.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Spamming Left and Right can
+reset your horizontal speed"
+
+[node name="Label7" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -320.0
+margin_top = 1167.0
+margin_right = 2434.0
+margin_bottom = 1442.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Esc to pause
+R to reset
+"
+
+[node name="Label2" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -222.0
+margin_top = 5052.0
+margin_right = 2532.0
+margin_bottom = 5327.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Press Up to rise"
+
+[node name="Label5" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -145.0
+margin_top = 5578.0
+margin_right = 2609.0
+margin_bottom = 5853.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "The bigger the dive...
+...the more speed you gain"
+
+[node name="Label3" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -129.0
+margin_top = 1929.0
+margin_right = 2625.0
+margin_bottom = 2204.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "The more you rise...
+....the more speed you lose"
+
+[node name="Label4" type="Label" parent="TutorialText/Height-Ind"]
+margin_left = -336.0
+margin_top = 4198.0
+margin_right = 2418.0
+margin_bottom = 4473.0
+rect_pivot_offset = Vector2( 424, 128 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Collect all the food to win"
+
+[node name="Collectibles" type="Node2D" parent="."]
+position = Vector2( -16, -1666 )
+
+[node name="Collectible" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 6049, 5739 )
+rotation = 0.169297
+
+[node name="Collectible8" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 4997, 5728 )
+rotation = 0.169297
+
+[node name="Collectible9" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 3975, 5713 )
+rotation = 0.169297
+
+[node name="Collectible10" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 2726, 5676 )
+rotation = 0.169297
+
+[node name="Collectible2" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 6844, 5743 )
+rotation = 0.169297
+
+[node name="Collectible3" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 7888, 5747 )
+rotation = 0.169297
+
+[node name="Collectible4" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 9423, 5758 )
+rotation = 0.169297
+
+[node name="Collectible5" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 10534, 5754 )
+rotation = 0.169297
+
+[node name="Collectible6" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 11603, 5751 )
+rotation = 0.169297
+
+[node name="Collectible7" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 12556, 5744 )
+rotation = 0.169297
+
+[node name="Collectible11" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 16957, 5637 )
+rotation = 0.169297
+
+[node name="Collectible12" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 15905, 5626 )
+rotation = 0.169297
+
+[node name="Collectible13" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 14883, 5611 )
+rotation = 0.169297
+
+[node name="Collectible14" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 13634, 5574 )
+rotation = 0.169297
+
+[node name="Collectible15" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 17895, 5659 )
+rotation = 0.169297
+
+[node name="Collectible16" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 18939, 5663 )
+rotation = 0.169297
+
+[node name="Collectible17" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 20328, 5722 )
+rotation = 0.169297
+
+[node name="Collectible18" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 21434, 6063 )
+rotation = 0.169297
+
+[node name="Collectible19" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 22508, 5715 )
+rotation = 0.169297
+
+[node name="Collectible20" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 23606, 5308 )
+rotation = 0.169297
+
+[node name="Collectible21" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 24746, 5707 )
+rotation = 0.169297
+
+[node name="Collectible22" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 25852, 6048 )
+rotation = 0.169297
+
+[node name="Collectible23" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 26926, 5700 )
+rotation = 0.169297
+
+[node name="Collectible24" parent="Collectibles" instance=ExtResource( 3 )]
+position = Vector2( 28024, 5293 )
+rotation = 0.169297
