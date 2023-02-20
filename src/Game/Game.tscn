@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -20,6 +20,10 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 60
 font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+default_font = ExtResource( 8 )
+Button/fonts/font = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
@@ -138,16 +142,16 @@ margin_bottom = 696.0
 custom_fonts/font = SubResource( 2 )
 text = "Press 'R' to Restart"
 
-[node name="LevelSelect" type="OptionButton" parent="PauseLayer"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -139.5
-margin_top = -54.0
-margin_right = 139.5
-custom_fonts/font = ExtResource( 8 )
-text = "Level Selector"
+[node name="LevelSelect" type="VBoxContainer" parent="PauseLayer"]
+pause_mode = 2
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -279.0
+margin_top = -27.0
+margin_bottom = 27.0
+theme = SubResource( 7 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -202,4 +206,3 @@ visibility_mode = 1
 
 [connection signal="button_down" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
 [connection signal="pressed" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
-[connection signal="item_selected" from="PauseLayer/LevelSelect" to="." method="_on_LevelSelect_item_selected"]

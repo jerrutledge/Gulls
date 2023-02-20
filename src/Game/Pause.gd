@@ -2,26 +2,23 @@ extends Control
 
 signal restart
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var level_select: Control = null
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
+	level_select = get_parent().get_node("LevelSelect")
 
 func _input(event):
-
 	if event.is_action_pressed("pause"):
 		var tree = get_tree()
 		tree.paused = not tree.paused
 		if tree.paused:
+			level_select.show()
 			show()
 		else:
 			hide()
-			
-			
+			level_select.hide()
+
 func _unhandled_input(event):
 	if event.is_action_pressed("restart"):
 		var tree = get_tree()
@@ -29,3 +26,4 @@ func _unhandled_input(event):
 			tree.paused = false
 			hide()
 		emit_signal("restart")
+
