@@ -18,6 +18,7 @@ next_level_name = "Level3"
 
 [node name="Gull" parent="." instance=ExtResource( 2 )]
 position = Vector2( 461, 3571 )
+has_floor = false
 
 [node name="Trees" type="Node2D" parent="."]
 

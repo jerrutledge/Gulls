@@ -16,6 +16,7 @@ has_floor = false
 left_clamp = -12000
 right_clamp = 50000
 bottom_clamp = 6000
+fixed_zoom = 1.2
 
 [node name="SkyBackground" parent="." instance=ExtResource( 2 )]
 

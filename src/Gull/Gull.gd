@@ -29,6 +29,7 @@ export(int) var top_clamp = 0
 export(int) var bottom_clamp = 10000
 export(float) var ZOOM_SPEED = 6.0
 export(int) var floor_y = 6000
+export(float) var fixed_zoom = 2
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
@@ -45,6 +46,8 @@ func _ready():
 	camera.limit_right = right_clamp
 	camera.limit_top = top_clamp
 	camera.limit_bottom = bottom_clamp
+	if not has_floor:
+		camera.zoom = Vector2(fixed_zoom, fixed_zoom)
 	cam_height = ProjectSettings.get_setting("display/window/size/height")
 
 
