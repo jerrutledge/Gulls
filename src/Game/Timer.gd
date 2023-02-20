@@ -14,3 +14,6 @@ func _process(delta):
 
 func reset():
 	time_elapsed = 0
+
+func get_time():
+	return time_elapsed

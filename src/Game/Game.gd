@@ -1,6 +1,7 @@
 extends Node2D
 
 var loading: bool = false
+var times_dict: Dictionary = {}
 var _level_node: Node2D = null
 var player: KinematicBody2D = null
 export(String) var starting_level_name = "Level3"
@@ -52,19 +53,24 @@ func load_level(level_name):
 		level_resource = load("res://levels/" + level_name + ".tscn")
 	_level_node = level_resource.instance()
 	_level_node.name = "Level" #I currently find the Gull with a hardcoded path through 'Level'
-	_level_node.connect("item_progress_updated", self, "_on_score_update")
+	var _idc = _level_node.connect("item_progress_updated", self, "_on_score_update")
 	add_child(_level_node)
 	
 	player = _level_node.get_node("Gull")
-	var _idc = player.connect("died", self, "_on_player_death")
+	_idc = player.connect("died", self, "_on_player_death")
 	current_level_name = level_name
 	timer.reset()
 	loading = false
 
 func finish_level():
 	get_tree().paused = true
+	var time = timer.get_time()
+	print_debug(time)
 	success_screen.show()
 	level_selector.show()
+	if not _level_node.has_method("get_next_level") or _level_node.get_next_level() == "":
+		#stop
+		pass
 
 func next_level():
 	if _level_node.has_method("get_next_level"):

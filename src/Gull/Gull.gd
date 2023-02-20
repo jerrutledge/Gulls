@@ -29,7 +29,7 @@ export(int) var top_clamp = 0
 export(int) var bottom_clamp = 10000
 export(float) var ZOOM_SPEED = 6.0
 export(int) var floor_y = 6000
-export(float) var fixed_zoom = 2
+export(float) var fixed_zoom = 2.0
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 onready var camera: Camera2D = $Camera2D
