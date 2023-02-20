@@ -6,8 +6,9 @@ onready var bulletScene = preload("res://src/Enemies/Bullet.tscn")
 # var b = "text"
 var velocity = 50
 var gull
-var shooting_interval = 5
+var shooting_interval = 3.5
 var shooting_timer = 0
+var pursuit_radius = 3500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +19,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_instance_valid(gull):
+		if (gull.position - position).length() > pursuit_radius:
+			return 
 		var direction = (gull.position - position).normalized()
 		position += direction * velocity * delta
 		shooting_timer += delta

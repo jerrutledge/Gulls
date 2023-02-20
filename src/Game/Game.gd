@@ -3,7 +3,7 @@ extends Node2D
 var loading: bool = false
 var _level_node: Node2D = null
 var player: KinematicBody2D = null
-export(String) var starting_level_name = "Level"
+export(String) var starting_level_name = "Level3"
 var current_level_name: String
 var level_resource: PackedScene
 export var levels = ["Tutorial", "Level"]
