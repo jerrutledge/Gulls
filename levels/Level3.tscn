@@ -17,27 +17,28 @@ script = ExtResource( 9 )
 
 [node name="Gull" parent="." instance=ExtResource( 2 )]
 position = Vector2( 208, 3748 )
+close_camera = true
 
 [node name="Trees" type="Node2D" parent="."]
 position = Vector2( -2016, -224 )
 
 [node name="Trunk" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5825, 6045 )
+position = Vector2( 5825, 6069 )
 
 [node name="Trunk2" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5832, 5210 )
+position = Vector2( 5832, 5234 )
 
 [node name="Trunk5" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5826, 5507 )
+position = Vector2( 5826, 5531 )
 
 [node name="Trunk4" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5827, 4932 )
+position = Vector2( 5827, 4956 )
 
 [node name="TreeBush" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5807, 4670 )
+position = Vector2( 5807, 4694 )
 
 [node name="TreeBush4" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5793, 5766 )
+position = Vector2( 5793, 5790 )
 
 [node name="Trunk7" parent="Trees" instance=ExtResource( 4 )]
 position = Vector2( 10121, 6060 )
@@ -88,54 +89,54 @@ position = Vector2( 3324, 4710 )
 position = Vector2( 3310, 5806 )
 
 [node name="Trunk3" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5798, 4384 )
+position = Vector2( 5798, 4408 )
 
 [node name="Trunk6" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5819, 3585 )
+position = Vector2( 5819, 3609 )
 
 [node name="Trunk19" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5813, 3882 )
+position = Vector2( 5813, 3906 )
 
 [node name="Trunk20" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5814, 3307 )
+position = Vector2( 5814, 3331 )
 
 [node name="TreeBush11" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5780, 4141 )
+position = Vector2( 5780, 4165 )
 
 [node name="Trunk21" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 4755, 4429 )
+position = Vector2( 4755, 4453 )
 rotation = 3.13687
 
 [node name="Trunk22" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 4701, 3942 )
+position = Vector2( 4701, 3966 )
 rotation = 3.09188
 
 [node name="Trunk23" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 4982, 4188 )
+position = Vector2( 4982, 4212 )
 rotation = 1.5601
 
 [node name="Trunk24" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5531, 4134 )
+position = Vector2( 5531, 4158 )
 rotation = 1.50283
 
 [node name="TreeBush3" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5232, 4128 )
+position = Vector2( 5232, 4152 )
 rotation = 1.50283
 
 [node name="TreeBush12" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 4744, 4170 )
+position = Vector2( 4744, 4194 )
 rotation = 1.50283
 
 [node name="TreeBush13" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5232, 4128 )
+position = Vector2( 5232, 4152 )
 rotation = 1.50283
 
 [node name="TreeBush14" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 4735, 3693 )
+position = Vector2( 4735, 3717 )
 rotation = 1.50283
 
 [node name="TreeBush15" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 4765, 4680 )
+position = Vector2( 4765, 4704 )
 rotation = 1.50283
 
 [node name="Trunk25" parent="Trees" instance=ExtResource( 4 )]
@@ -340,55 +341,55 @@ position = Vector2( 8962, 4649 )
 rotation = 1.50283
 
 [node name="Trunk61" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5537, 3122 )
+position = Vector2( 5537, 3146 )
 rotation = 1.5601
 
 [node name="Trunk62" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6086, 3068 )
+position = Vector2( 6078, 3113 )
 rotation = 1.50283
 
 [node name="TreeBush43" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5787, 3062 )
+position = Vector2( 5787, 3086 )
 rotation = 1.50283
 
 [node name="TreeBush44" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6369, 3064 )
+position = Vector2( 6361, 3109 )
 rotation = 1.50283
 
 [node name="TreeBush45" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5787, 3062 )
+position = Vector2( 5787, 3086 )
 rotation = 1.50283
 
 [node name="Trunk63" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5303, 2837 )
+position = Vector2( 5303, 2861 )
 rotation = 3.13687
 
 [node name="Trunk64" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5266, 2333 )
+position = Vector2( 5266, 2357 )
 rotation = 3.09188
 
 [node name="Trunk65" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 5032, 2576 )
+position = Vector2( 5032, 2600 )
 rotation = 1.50283
 
 [node name="TreeBush46" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 4733, 2570 )
+position = Vector2( 4733, 2594 )
 rotation = 1.50283
 
 [node name="TreeBush47" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5315, 2572 )
+position = Vector2( 5315, 2596 )
 rotation = 1.50283
 
 [node name="TreeBush48" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 4733, 2570 )
+position = Vector2( 4733, 2594 )
 rotation = 1.50283
 
 [node name="TreeBush49" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5300, 2084 )
+position = Vector2( 5300, 2108 )
 rotation = 1.50283
 
 [node name="TreeBush50" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 5313, 3088 )
+position = Vector2( 5313, 3112 )
 rotation = 1.50283
 
 [node name="Trunk67" parent="Trees" instance=ExtResource( 4 )]
@@ -455,22 +456,22 @@ position = Vector2( 7356, 1478 )
 rotation = 1.50283
 
 [node name="Trunk70" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6870, 6045 )
+position = Vector2( 6876, 6077 )
 
 [node name="Trunk71" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6877, 5210 )
+position = Vector2( 6883, 5242 )
 
 [node name="Trunk72" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6871, 5507 )
+position = Vector2( 6877, 5539 )
 
 [node name="Trunk73" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6872, 4932 )
+position = Vector2( 6878, 4964 )
 
 [node name="TreeBush59" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6847, 5098 )
+position = Vector2( 6853, 5130 )
 
 [node name="TreeBush60" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6838, 5766 )
+position = Vector2( 6844, 5798 )
 
 [node name="TreeBush5" parent="Trees" instance=ExtResource( 3 )]
 position = Vector2( 10103, 4685 )
@@ -482,47 +483,47 @@ position = Vector2( 10119, 3143 )
 position = Vector2( 7883, 4665 )
 
 [node name="Trunk78" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6576, 4650 )
+position = Vector2( 6582, 4682 )
 rotation = 4.73946
 
 [node name="Trunk79" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 6817, 4419 )
+position = Vector2( 6823, 4451 )
 rotation = 3.09188
 
 [node name="Trunk80" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 7098, 4665 )
+position = Vector2( 7104, 4697 )
 rotation = 1.5601
 
 [node name="TreeBush63" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 7348, 4605 )
+position = Vector2( 7354, 4637 )
 rotation = 1.50283
 
 [node name="TreeBush64" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6860, 4647 )
+position = Vector2( 6866, 4679 )
 rotation = 1.50283
 
 [node name="TreeBush65" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 7348, 4605 )
+position = Vector2( 7354, 4637 )
 rotation = 1.50283
 
 [node name="TreeBush66" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6851, 4170 )
+position = Vector2( 6857, 4202 )
 rotation = 1.50283
 
 [node name="TreeBush67" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 6314, 4639 )
+position = Vector2( 6320, 4671 )
 rotation = 1.50283
 
 [node name="Trunk88" parent="Trees" instance=ExtResource( 4 )]
-position = Vector2( 13279, 5996 )
+position = Vector2( 13285, 6074 )
 
 [node name="TreeBush75" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 13247, 5717 )
+position = Vector2( 13253, 5795 )
 
 [node name="CollectibleGroup" type="Node2D" parent="."]
 
 [node name="Collectible" parent="CollectibleGroup" instance=ExtResource( 5 )]
-position = Vector2( 3796, 4993 )
+position = Vector2( 3796, 5017 )
 
 [node name="Collectible2" parent="CollectibleGroup" instance=ExtResource( 5 )]
 position = Vector2( 5917, 1749 )
@@ -531,24 +532,18 @@ position = Vector2( 5917, 1749 )
 position = Vector2( 9034, 3255 )
 
 [node name="Collectible5" parent="CollectibleGroup" instance=ExtResource( 5 )]
-position = Vector2( 11227, 5232 )
+position = Vector2( 11233, 5310 )
 
 [node name="DroneGroup" type="Node2D" parent="."]
 
 [node name="Drone" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 1915, 4897 )
 
-[node name="Drone2" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 5373, 5089 )
-
 [node name="Drone3" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 4043, 2414 )
-
-[node name="Drone4" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 4436, 3578 )
+position = Vector2( 4043, 2438 )
 
 [node name="Drone5" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 3044, 5337 )
+position = Vector2( 3044, 5361 )
 
 [node name="Drone6" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 8987, 2691 )
@@ -559,14 +554,8 @@ position = Vector2( 6841, 2799 )
 [node name="Drone8" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 6973, 5317 )
 
-[node name="Drone9" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 10797, 4466 )
-
 [node name="Drone10" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 9011, 5125 )
-
-[node name="Drone12" parent="DroneGroup" instance=ExtResource( 6 )]
-position = Vector2( 10725, 3483 )
 
 [node name="Drone13" parent="DroneGroup" instance=ExtResource( 6 )]
 position = Vector2( 10711, 3169 )
@@ -591,7 +580,7 @@ position = Vector2( 11317, 3120 )
 [node name="RocketeerGroup" type="Node2D" parent="."]
 
 [node name="Rocketeer" parent="RocketeerGroup" instance=ExtResource( 7 )]
-position = Vector2( 10491, 5900 )
+position = Vector2( 10499, 5943 )
 
 [node name="Rocketeer3" parent="RocketeerGroup" instance=ExtResource( 7 )]
-position = Vector2( 9384, 5890 )
+position = Vector2( 9382, 5933 )
