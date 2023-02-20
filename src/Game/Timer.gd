@@ -1,7 +1,7 @@
 extends ColorRect
 
 var time_elapsed: float = 0
-onready var label = $Label
+onready var label = $VBoxContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
@@ -14,3 +14,6 @@ func _process(delta):
 
 func reset():
 	time_elapsed = 0
+
+func get_time():
+	return time_elapsed
