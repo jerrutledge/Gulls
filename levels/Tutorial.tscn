@@ -8,7 +8,7 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
-next_level_name = "Level"
+next_level_name = "Level1"
 
 [node name="Gull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 336, 2857 )
@@ -119,119 +119,95 @@ position = Vector2( -16, -1666 )
 [node name="Collectible" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 6049, 5739 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible8" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 4997, 5728 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible9" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 3975, 5713 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible10" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 2726, 5676 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible2" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 6844, 5743 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible3" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 7888, 5747 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible4" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 9423, 5758 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible5" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 10534, 5754 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible6" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 11603, 5751 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible7" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 12556, 5744 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible11" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 16957, 5637 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible12" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 15905, 5626 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible13" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 14883, 5611 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible14" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 13634, 5574 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible15" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 17895, 5659 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible16" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 18939, 5663 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible17" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 20328, 5722 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible18" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 21434, 6063 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible19" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 22508, 5715 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible20" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 23606, 5308 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible21" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 24746, 5707 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible22" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 25852, 6048 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible23" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 26926, 5700 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible24" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 28024, 5293 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )

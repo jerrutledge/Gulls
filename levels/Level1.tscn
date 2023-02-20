@@ -9,6 +9,7 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
+next_level_name = "Level2"
 
 [node name="Gull" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1444, 3791 )
@@ -24,17 +25,14 @@ position = Vector2( 1444, 3791 )
 [node name="Collectible" parent="CollectibleGroup" instance=ExtResource( 4 )]
 position = Vector2( 7047, 4025 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible2" parent="CollectibleGroup" instance=ExtResource( 4 )]
 position = Vector2( 12108, 5743 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Collectible3" parent="CollectibleGroup" instance=ExtResource( 4 )]
 position = Vector2( 3196, 5893 )
 rotation = 0.169297
-scale = Vector2( 5, 5 )
 
 [node name="Trees" type="Node2D" parent="."]
 
