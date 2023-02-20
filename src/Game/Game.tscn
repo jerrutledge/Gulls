@@ -153,6 +153,11 @@ margin_top = -27.0
 margin_bottom = 27.0
 theme = SubResource( 7 )
 
+[node name="Label" type="Label" parent="PauseLayer/LevelSelect"]
+margin_right = 279.0
+margin_bottom = 48.0
+text = "Select Level:"
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="TimerRect" type="ColorRect" parent="HUD"]
