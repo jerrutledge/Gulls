@@ -6,13 +6,14 @@ var player: KinematicBody2D = null
 export(String) var starting_level_name = "Level3"
 var current_level_name: String
 var level_resource: PackedScene
-export var levels = ["Tutorial", "Level"]
+export var levels = ["Tutorial", "Level1", "Level2", "Level3"]
 
 onready var _pause_menu = $PauseLayer/Pause
 onready var _death_screen = $DeathLayer/Death
 onready var timer: ColorRect = $HUD/TimerRect
 onready var success_screen: CanvasLayer = $SuccessLayer
 onready var level_selector: Control = $PauseLayer/LevelSelect
+onready var score_display: Label = $HUD/TimerRect/VBoxContainer/Score
 
 func _ready():
 	load_level(starting_level_name)
@@ -51,6 +52,7 @@ func load_level(level_name):
 		level_resource = load("res://levels/" + level_name + ".tscn")
 	_level_node = level_resource.instance()
 	_level_node.name = "Level" #I currently find the Gull with a hardcoded path through 'Level'
+	_level_node.connect("item_progress_updated", self, "_on_score_update")
 	add_child(_level_node)
 	
 	player = _level_node.get_node("Gull")
@@ -82,4 +84,5 @@ func reset_default_visibilities():
 	success_screen.hide()
 	level_selector.hide()
 
-
+func _on_score_update(score):
+	score_display.text = score

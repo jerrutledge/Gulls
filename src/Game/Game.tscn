@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/art/ui/restart.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/art/items/fries.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=3]
 size = 200
@@ -42,7 +43,7 @@ anchor_bottom = 1.0
 [node name="ColorRect" type="ColorRect" parent="DeathLayer/Death"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
+color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
 
 [node name="Label" type="Label" parent="DeathLayer/Death"]
 anchor_left = 0.5
@@ -73,7 +74,7 @@ text = "Press 'R' to Restart"
 [node name="ColorRect" type="ColorRect" parent="SuccessLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
+color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
 
 [node name="Label" type="Label" parent="SuccessLayer/ColorRect"]
 anchor_left = 0.5
@@ -123,7 +124,7 @@ script = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="PauseLayer/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.278431 )
+color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
 
 [node name="Label" type="Label" parent="PauseLayer/Pause"]
 margin_left = 639.0
@@ -169,19 +170,32 @@ margin_bottom = 131.0
 color = Color( 0, 0, 0, 0.54902 )
 script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="HUD/TimerRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = -36.5
-margin_right = 90.5
-margin_bottom = 30.5
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/TimerRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="HUD/TimerRect/VBoxContainer"]
+margin_right = 239.0
+margin_bottom = 57.0
 custom_fonts/font = SubResource( 6 )
 text = "0:0:0"
 align = 1
 valign = 1
+
+[node name="Score" type="Label" parent="HUD/TimerRect/VBoxContainer"]
+margin_top = 61.0
+margin_right = 239.0
+margin_bottom = 109.0
+custom_fonts/font = ExtResource( 8 )
+text = "0/0"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="HUD/TimerRect/VBoxContainer/Score"]
+position = Vector2( 15, 0 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+centered = false
 
 [node name="PauseControl" type="Control" parent="HUD"]
 margin_right = 40.0
