@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/Game/SkyBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Environment/SkyBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Game/TreeBush.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Game/Trunk.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Obstacles/TreeBush.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Obstacles/Trunk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Enemies/Rocketeer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Enemies/Drone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Enemies/Shooter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=9]
-[ext_resource path="res://src/Background/Sand.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Environment/Sand.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 9 )
