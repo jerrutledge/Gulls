@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/Game/SkyBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Game/TreeBush.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Game/Trunk.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Background/Sand.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
@@ -15,6 +16,8 @@ next_level_name = "Level2"
 position = Vector2( 675, 3908 )
 
 [node name="SkyBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Ground" parent="SkyBackground" instance=ExtResource( 6 )]
 
 [node name="CollectibleGroup" type="Node2D" parent="."]
 
