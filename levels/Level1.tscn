@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=1]
-[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Game/SkyBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Game/TreeBush.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Game/Trunk.tscn" type="PackedScene" id=5]
@@ -14,11 +14,7 @@ next_level_name = "Level2"
 [node name="Gull" parent="." instance=ExtResource( 7 )]
 position = Vector2( 675, 3908 )
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
-
-[node name="DroneGroup" type="Node2D" parent="."]
-
-[node name="ShooterGroup" type="Node2D" parent="."]
+[node name="SkyBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="CollectibleGroup" type="Node2D" parent="."]
 

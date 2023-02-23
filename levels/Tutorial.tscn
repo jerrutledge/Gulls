@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Gull/Gull.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Game/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Game/SkyBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Collectibles/Collectible.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/font/TutorialFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=5]
@@ -16,7 +16,6 @@ has_floor = false
 left_clamp = -12000
 right_clamp = 50000
 bottom_clamp = 6000
-fixed_zoom = 1.2
 
 [node name="SkyBackground" parent="." instance=ExtResource( 2 )]
 
