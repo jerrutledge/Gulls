@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/art/background/solid.jpeg" type="Texture" id=1]
+
+[node name="Ground" type="ParallaxLayer"]
+motion_mirroring = Vector2( 12000, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 0.878431, 0.509804, 1 )
+margin_top = 6000.0
+margin_right = 12000.0
+margin_bottom = 9000.0
+texture = ExtResource( 1 )
+expand = true

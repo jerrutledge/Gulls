@@ -3,6 +3,8 @@
 [ext_resource path="res://assets/art/enemies/trunk.png" type="Texture" id=1]
 
 [node name="Trunk" type="Node2D"]
+modulate = Color( 1, 1, 1, 0.2 )
+z_index = -1
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.530315, 0.530315 )
