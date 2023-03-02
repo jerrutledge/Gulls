@@ -50,7 +50,6 @@ func load_level(level_name):
 	loading = true
 	reset_default_visibilities()
 	if not (_level_node == null):
-		_level_node.name = _level_node.name + "old"
 		_level_node.queue_free()
 		# wait for old level to de-load
 		yield(_level_node, "tree_exited")
@@ -70,7 +69,6 @@ func load_level(level_name):
 func finish_level():
 	get_tree().paused = true
 	var time: float = timer.get_time()
-	print_debug(time)
 	update_time(current_level_name, time)
 	success_screen.show()
 	level_selector.show()
@@ -82,7 +80,6 @@ func finish_level():
 func next_level():
 	if _level_node.has_method("get_next_level"):
 		var new_level = _level_node.get_next_level()
-		print_debug("new level: '", new_level, "'")
 		if new_level:
 			load_level(new_level)
 		else:
