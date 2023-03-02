@@ -78,9 +78,12 @@ func finish_level():
 	success_screen.show()
 	level_selector.show()
 	hi_score.show()
+	var next_lvl_btn = $SuccessLayer/ColorRect/Button
 	if not _level_node.has_method("get_next_level") or _level_node.get_next_level() == "":
-		#stop
-		pass
+		# no next level, do not show button
+		next_lvl_btn.hide()
+	else:
+		next_lvl_btn.show()
 
 func next_level():
 	if _level_node.has_method("get_next_level"):
