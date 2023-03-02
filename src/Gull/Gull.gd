@@ -123,7 +123,7 @@ func process_movement(delta):
 	if position.y < floor_y / 2:
 		h_fac = floor_y/2 
 	var target_zoom = max(h_fac / (cam_height/2), 2)
-	if false:
+	if close_camera:
 		target_zoom = min(target_zoom, 2.5)
 	smooth_zoom = lerp(smooth_zoom, target_zoom, ZOOM_SPEED * delta)
 	camera.zoom = Vector2(smooth_zoom, smooth_zoom)
