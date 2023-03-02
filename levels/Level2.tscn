@@ -13,6 +13,9 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 next_level_name = "Level3"
 
 [node name="Gull" parent="." instance=ExtResource( 2 )]

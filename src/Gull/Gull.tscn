@@ -105,6 +105,7 @@ height = 74.0002
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 1 )
+bottom_clamp = 6100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -4, 5 )
@@ -116,6 +117,7 @@ current = true
 limit_left = -3000
 limit_top = 0
 limit_right = 12000
+limit_bottom = 6000
 
 [node name="GullShape" type="CollisionShape2D" parent="."]
 rotation = 1.5708
