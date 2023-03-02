@@ -43,6 +43,7 @@ func _on_player_death():
 	death_screen.show()
 	level_selector.show()
 	hi_score.show()
+	menu_open = true
 
 func load_level(level_name):
 	if loading:
@@ -68,6 +69,7 @@ func load_level(level_name):
 
 func finish_level():
 	get_tree().paused = true
+	menu_open = true
 	var time: float = timer.get_time()
 	update_time(current_level_name, time)
 	success_screen.show()
@@ -89,6 +91,7 @@ func next_level():
 
 func reset_default_visibilities():
 	get_tree().paused = false
+	menu_open = false
 	pause_menu.hide()
 	death_screen.hide()
 	success_screen.hide()
