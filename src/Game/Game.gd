@@ -1,7 +1,7 @@
 extends Node2D
 
 var loading: bool = false
-var menu_open: bool = false
+var menu_open: bool = false setget , is_menu_open
 var times_dict: Dictionary = {}
 var _level_node: Node2D = null
 var player: KinematicBody2D = null
@@ -44,6 +44,9 @@ func _on_player_death():
 	level_selector.show()
 	hi_score.show()
 	menu_open = true
+
+func is_menu_open():
+	return menu_open
 
 func load_level(level_name):
 	if loading:
