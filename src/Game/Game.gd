@@ -1,6 +1,7 @@
 extends Node2D
 
 var loading: bool = false
+var menu_open: bool = false
 var times_dict: Dictionary = {}
 var _level_node: Node2D = null
 var player: KinematicBody2D = null
@@ -9,8 +10,8 @@ var current_level_name: String
 var level_resource: PackedScene
 export var levels = ["Tutorial", "Level1", "Level2", "Level3"]
 
-onready var _pause_menu = $PauseLayer/Pause
-onready var _death_screen = $DeathLayer/Death
+onready var pause_menu = $PauseLayer/Pause
+onready var death_screen = $DeathLayer/Death
 onready var timer: ColorRect = $HUD/TimerRect
 onready var success_screen: CanvasLayer = $SuccessLayer
 onready var level_selector: Control = $PauseLayer/LevelSelect
@@ -20,7 +21,7 @@ onready var score_display: Label = $HUD/TimerRect/VBoxContainer/Score
 
 func _ready():
 	load_level(starting_level_name)
-	_pause_menu.connect("restart", self, "_restart_level")
+	pause_menu.connect("restart", self, "_restart_level")
 	reset_default_visibilities()
 	for level in levels:
 		times_dict[level] = 999.0
@@ -36,11 +37,10 @@ func _input(event):
 		_restart_level()
 
 func _restart_level():
-	_death_screen.hide()
 	load_level(current_level_name)
 	
 func _on_player_death():
-	_death_screen.show()
+	death_screen.show()
 	level_selector.show()
 	hi_score.show()
 
@@ -89,8 +89,8 @@ func next_level():
 
 func reset_default_visibilities():
 	get_tree().paused = false
-	_pause_menu.hide()
-	_death_screen.hide()
+	pause_menu.hide()
+	death_screen.hide()
 	success_screen.hide()
 	level_selector.hide()
 	hi_score.hide()
