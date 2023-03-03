@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://assets/art/items/fries.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/items/success_start.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/items/star_success.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=3]
 size = 200
@@ -20,6 +20,7 @@ size = 60
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=9]
+HBoxContainer/constants/separation = 20
 Label/fonts/font = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -136,52 +137,58 @@ grow_vertical = 2
 theme = SubResource( 9 )
 
 [node name="Star1" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
-margin_right = 256.0
-margin_bottom = 308.0
+margin_right = 200.0
+margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star1"]
-margin_right = 256.0
-margin_bottom = 256.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
+expand = true
 
 [node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star1"]
-margin_top = 260.0
-margin_right = 256.0
-margin_bottom = 308.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 252.0
 text = "<1:00"
 align = 1
 
 [node name="Star2" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
-margin_left = 260.0
-margin_right = 516.0
-margin_bottom = 308.0
+margin_left = 220.0
+margin_right = 420.0
+margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star2"]
-margin_right = 256.0
-margin_bottom = 256.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
+expand = true
 
 [node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star2"]
-margin_top = 260.0
-margin_right = 256.0
-margin_bottom = 308.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 252.0
 text = "<0:45"
 align = 1
 
 [node name="Star3" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
-margin_left = 520.0
-margin_right = 776.0
-margin_bottom = 308.0
+margin_left = 440.0
+margin_right = 640.0
+margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star3"]
-margin_right = 256.0
-margin_bottom = 256.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
+expand = true
 
 [node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star3"]
-margin_top = 260.0
-margin_right = 256.0
-margin_bottom = 308.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 252.0
 text = "<0:30"
 align = 1
 
