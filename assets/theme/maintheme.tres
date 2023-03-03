@@ -4,5 +4,7 @@
 
 [resource]
 default_font = ExtResource( 1 )
+GridContainer/constants/hseparation = 40
+GridContainer/constants/vseparation = 10
 HBoxContainer/constants/separation = 20
 Label/fonts/font = ExtResource( 1 )

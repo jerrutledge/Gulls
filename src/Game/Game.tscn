@@ -257,7 +257,6 @@ text = "High Scores:"
 margin_top = 52.0
 margin_right = 291.0
 margin_bottom = 52.0
-theme = ExtResource( 11 )
 columns = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
