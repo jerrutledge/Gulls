@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://assets/art/items/fries.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/items/success_start.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=3]
 size = 200
@@ -17,6 +18,9 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=4]
 size = 60
 font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=9]
+Label/fonts/font = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -39,6 +43,7 @@ script = ExtResource( 1 )
 starting_level_name = "Tutorial"
 
 [node name="DeathLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Death" type="Control" parent="DeathLayer"]
 anchor_right = 1.0
@@ -85,10 +90,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -434.0
-margin_top = -149.0
-margin_right = 434.0
-margin_bottom = 86.0
+margin_left = -436.0
+margin_top = -90.0
+margin_right = 432.0
+margin_bottom = 145.0
 custom_fonts/font = SubResource( 3 )
 text = "SUCCESS"
 
@@ -97,10 +102,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -257.0
-margin_top = 85.0
-margin_right = 244.0
-margin_bottom = 156.0
+margin_left = -253.0
+margin_top = 124.0
+margin_right = 248.0
+margin_bottom = 195.0
 custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
@@ -117,7 +122,71 @@ margin_bottom = 375.0
 custom_fonts/font = ExtResource( 8 )
 text = "NEXT LEVEL"
 
+[node name="Stars" type="HBoxContainer" parent="SuccessLayer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+margin_left = -20.0
+margin_top = 40.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource( 9 )
+
+[node name="Star1" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+margin_right = 256.0
+margin_bottom = 308.0
+
+[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star1"]
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star1"]
+margin_top = 260.0
+margin_right = 256.0
+margin_bottom = 308.0
+text = "<1:00"
+align = 1
+
+[node name="Star2" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+margin_left = 260.0
+margin_right = 516.0
+margin_bottom = 308.0
+
+[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star2"]
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star2"]
+margin_top = 260.0
+margin_right = 256.0
+margin_bottom = 308.0
+text = "<0:45"
+align = 1
+
+[node name="Star3" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+margin_left = 520.0
+margin_right = 776.0
+margin_bottom = 308.0
+
+[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star3"]
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star3"]
+margin_top = 260.0
+margin_right = 256.0
+margin_bottom = 308.0
+text = "<0:30"
+align = 1
+
 [node name="PauseLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause" type="Control" parent="PauseLayer"]
 pause_mode = 2
@@ -210,7 +279,7 @@ valign = 1
 [node name="Score" type="Label" parent="HUD/TimerRect/VBoxContainer"]
 margin_top = 61.0
 margin_right = 239.0
-margin_bottom = 120.0
+margin_bottom = 109.0
 custom_fonts/font = ExtResource( 8 )
 text = "0/0"
 align = 1
