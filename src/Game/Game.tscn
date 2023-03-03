@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://assets/art/items/fries.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/items/star_round.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/ui/shaded_star.png" type="Texture" id=10]
 [ext_resource path="res://assets/theme/maintheme.tres" type="Theme" id=11]
 
 [sub_resource type="DynamicFont" id=4]
@@ -79,7 +79,6 @@ custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
 [node name="SuccessLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="SuccessLayer"]
 anchor_right = 1.0
