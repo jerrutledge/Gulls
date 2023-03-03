@@ -12,14 +12,14 @@
 [ext_resource path="res://assets/art/items/star_round.png" type="Texture" id=10]
 [ext_resource path="res://assets/theme/maintheme.tres" type="Theme" id=11]
 
-[sub_resource type="DynamicFont" id=3]
-size = 200
+[sub_resource type="DynamicFont" id=4]
+size = 60
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 60
+[sub_resource type="DynamicFont" id=3]
+size = 200
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
@@ -44,7 +44,6 @@ script = ExtResource( 1 )
 starting_level_name = "Tutorial"
 
 [node name="DeathLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Death" type="Control" parent="DeathLayer"]
 anchor_right = 1.0
@@ -64,7 +63,7 @@ margin_left = -427.0
 margin_top = -151.0
 margin_right = 441.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "YOU DIED"
 
 [node name="Label2" type="Label" parent="DeathLayer/Death"]
@@ -80,6 +79,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
 [node name="SuccessLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="SuccessLayer"]
 anchor_right = 1.0
