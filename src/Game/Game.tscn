@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Game/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -9,35 +9,35 @@
 [ext_resource path="res://assets/art/ui/pause.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/ButtonFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://assets/art/items/fries.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/items/star_success.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/items/star_round.png" type="Texture" id=10]
+[ext_resource path="res://assets/theme/maintheme.tres" type="Theme" id=11]
 
 [sub_resource type="DynamicFont" id=3]
 size = 200
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 60
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
-
-[sub_resource type="Theme" id=9]
-HBoxContainer/constants/separation = 20
-Label/fonts/font = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="Theme" id=7]
-default_font = ExtResource( 8 )
-Button/fonts/font = ExtResource( 8 )
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/font/Roboto-Regular.ttf"
 
-[sub_resource type="Theme" id=8]
-default_font = ExtResource( 8 )
-Button/fonts/font = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 48
-font_data = ExtResource( 2 )
+[sub_resource type="DynamicFont" id=10]
+size = 60
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 9 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -120,7 +120,6 @@ margin_left = -125.0
 margin_top = 300.0
 margin_right = 125.0
 margin_bottom = 375.0
-custom_fonts/font = ExtResource( 8 )
 text = "NEXT LEVEL"
 
 [node name="Stars" type="HBoxContainer" parent="SuccessLayer/ColorRect"]
@@ -134,13 +133,14 @@ margin_right = 20.0
 margin_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource( 9 )
+theme = ExtResource( 11 )
 
 [node name="Star1" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
 margin_right = 200.0
 margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star1"]
+modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
@@ -160,6 +160,7 @@ margin_right = 420.0
 margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star2"]
+modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
@@ -179,6 +180,7 @@ margin_right = 640.0
 margin_bottom = 252.0
 
 [node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star3"]
+modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
@@ -193,7 +195,6 @@ text = "<0:30"
 align = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Pause" type="Control" parent="PauseLayer"]
 pause_mode = 2
@@ -233,7 +234,6 @@ margin_left = -283.0
 margin_top = -27.0
 margin_right = -30.0
 margin_bottom = 27.0
-theme = SubResource( 7 )
 
 [node name="Label" type="Label" parent="PauseLayer/LevelSelect"]
 margin_right = 253.0
@@ -247,7 +247,6 @@ margin_left = 30.0
 margin_top = -26.0
 margin_right = 321.0
 margin_bottom = 26.0
-theme = SubResource( 8 )
 
 [node name="Label" type="Label" parent="PauseLayer/HiScore"]
 margin_right = 291.0
@@ -258,6 +257,7 @@ text = "High Scores:"
 margin_top = 52.0
 margin_right = 291.0
 margin_bottom = 52.0
+theme = ExtResource( 11 )
 columns = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -277,16 +277,17 @@ anchor_bottom = 1.0
 
 [node name="Label" type="Label" parent="HUD/TimerRect/VBoxContainer"]
 margin_right = 239.0
-margin_bottom = 57.0
-custom_fonts/font = SubResource( 6 )
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 10 )
 text = "0:0:0"
 align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="HUD/TimerRect/VBoxContainer"]
-margin_top = 61.0
+margin_top = 75.0
 margin_right = 239.0
-margin_bottom = 109.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 0, 55 )
 custom_fonts/font = ExtResource( 8 )
 text = "0/0"
 align = 1
