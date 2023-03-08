@@ -10,13 +10,14 @@ var current_level_name: String
 var level_resource: PackedScene
 export var levels = ["Tutorial", "Level1", "Level2", "Level3"]
 
-onready var pause_menu = $PauseLayer/Pause
-onready var death_screen = $DeathLayer/Death
+onready var pause_menu = $MenuLayer/Pause
+onready var death_screen = $MenuLayer/Death
 onready var timer: ColorRect = $HUD/TimerRect
-onready var success_screen: CanvasLayer = $SuccessLayer
-onready var level_selector: Control = $PauseLayer/LevelSelect
-onready var hi_score: Control = $PauseLayer/HiScore
-onready var hi_score_scores: GridContainer = $PauseLayer/HiScore/Scores
+onready var success_screen: Control = $MenuLayer/Success
+onready var common_elements: Control = $MenuLayer/CommonElements
+onready var level_selector: Control = $MenuLayer/CommonElements/LevelSelect
+onready var hi_score: Control = $MenuLayer/CommonElements/HiScore
+onready var hi_score_scores: GridContainer = $MenuLayer/CommonElements/HiScore/Scores
 onready var score_display: Label = $HUD/TimerRect/VBoxContainer/Score
 
 func _ready():
@@ -41,8 +42,7 @@ func _restart_level():
 	
 func _on_player_death():
 	death_screen.show()
-	level_selector.show()
-	hi_score.show()
+	common_elements.show()
 	menu_open = true
 
 func is_menu_open():
@@ -76,9 +76,8 @@ func finish_level():
 	var time: float = timer.get_time()
 	update_time(current_level_name, time)
 	success_screen.show()
-	level_selector.show()
-	hi_score.show()
-	var next_lvl_btn = $SuccessLayer/ColorRect/Button
+	common_elements.show()
+	var next_lvl_btn = $MenuLayer/Success/Button
 	if not _level_node.has_method("get_next_level") or _level_node.get_next_level() == "":
 		# no next level, do not show button
 		next_lvl_btn.hide()
@@ -98,11 +97,10 @@ func next_level():
 func reset_default_visibilities():
 	get_tree().paused = false
 	menu_open = false
+	common_elements.hide()
 	pause_menu.hide()
 	death_screen.hide()
 	success_screen.hide()
-	level_selector.hide()
-	hi_score.hide()
 
 func _on_score_update(score):
 	score_display.text = score

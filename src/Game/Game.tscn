@@ -12,14 +12,14 @@
 [ext_resource path="res://assets/art/ui/shaded_star.png" type="Texture" id=10]
 [ext_resource path="res://assets/theme/maintheme.tres" type="Theme" id=11]
 
-[sub_resource type="DynamicFont" id=4]
-size = 60
+[sub_resource type="DynamicFont" id=3]
+size = 200
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 200
+[sub_resource type="DynamicFont" id=4]
+size = 60
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
@@ -43,49 +43,59 @@ font_data = SubResource( 9 )
 script = ExtResource( 1 )
 starting_level_name = "Tutorial"
 
-[node name="DeathLayer" type="CanvasLayer" parent="."]
+[node name="MenuLayer" type="CanvasLayer" parent="."]
 
-[node name="Death" type="Control" parent="DeathLayer"]
+[node name="CommonElements" type="Control" parent="MenuLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="DeathLayer/Death"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
-
-[node name="Label" type="Label" parent="DeathLayer/Death"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -427.0
-margin_top = -151.0
-margin_right = 441.0
-margin_bottom = 84.0
-custom_fonts/font = ExtResource( 4 )
-text = "YOU DIED"
-
-[node name="Label2" type="Label" parent="DeathLayer/Death"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = 85.0
-margin_right = 245.0
-margin_bottom = 156.0
-custom_fonts/font = SubResource( 4 )
-text = "Press 'R' to Restart"
-
-[node name="SuccessLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="SuccessLayer"]
+[node name="ColorRect" type="ColorRect" parent="MenuLayer/CommonElements"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
 
-[node name="Label" type="Label" parent="SuccessLayer/ColorRect"]
+[node name="LevelSelect" type="VBoxContainer" parent="MenuLayer/CommonElements"]
+pause_mode = 2
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 1597.0
+margin_top = 493.0
+margin_right = 1850.0
+margin_bottom = 547.0
+
+[node name="Label" type="Label" parent="MenuLayer/CommonElements/LevelSelect"]
+margin_right = 253.0
+margin_bottom = 48.0
+text = "Select Level:"
+
+[node name="HiScore" type="VBoxContainer" parent="MenuLayer/CommonElements"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = 494.0
+margin_right = 321.0
+margin_bottom = 546.0
+
+[node name="Label" type="Label" parent="MenuLayer/CommonElements/HiScore"]
+margin_right = 291.0
+margin_bottom = 48.0
+text = "High Scores:"
+
+[node name="Scores" type="GridContainer" parent="MenuLayer/CommonElements/HiScore"]
+margin_top = 52.0
+margin_right = 291.0
+margin_bottom = 52.0
+columns = 2
+
+[node name="Success" type="Control" parent="MenuLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="MenuLayer/Success"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -97,7 +107,7 @@ margin_bottom = 145.0
 custom_fonts/font = SubResource( 3 )
 text = "SUCCESS"
 
-[node name="Label2" type="Label" parent="SuccessLayer/ColorRect"]
+[node name="Label2" type="Label" parent="MenuLayer/Success"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -109,7 +119,7 @@ margin_bottom = 195.0
 custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to Restart"
 
-[node name="Button" type="Button" parent="SuccessLayer/ColorRect"]
+[node name="Button" type="Button" parent="MenuLayer/Success"]
 pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
@@ -121,7 +131,7 @@ margin_right = 125.0
 margin_bottom = 375.0
 text = "NEXT LEVEL"
 
-[node name="Stars" type="HBoxContainer" parent="SuccessLayer/ColorRect"]
+[node name="Stars" type="HBoxContainer" parent="MenuLayer/Success"]
 anchor_left = 0.5
 anchor_top = 0.25
 anchor_right = 0.5
@@ -134,11 +144,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource( 11 )
 
-[node name="Star1" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+[node name="Star1" type="VBoxContainer" parent="MenuLayer/Success/Stars"]
 margin_right = 200.0
 margin_bottom = 252.0
 
-[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star1"]
+[node name="TextureRect" type="TextureRect" parent="MenuLayer/Success/Stars/Star1"]
 modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
@@ -146,19 +156,19 @@ rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
 expand = true
 
-[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star1"]
+[node name="Label" type="Label" parent="MenuLayer/Success/Stars/Star1"]
 margin_top = 204.0
 margin_right = 200.0
 margin_bottom = 252.0
 text = "<1:00"
 align = 1
 
-[node name="Star2" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+[node name="Star2" type="VBoxContainer" parent="MenuLayer/Success/Stars"]
 margin_left = 220.0
 margin_right = 420.0
 margin_bottom = 252.0
 
-[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star2"]
+[node name="TextureRect" type="TextureRect" parent="MenuLayer/Success/Stars/Star2"]
 modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
@@ -166,19 +176,19 @@ rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
 expand = true
 
-[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star2"]
+[node name="Label" type="Label" parent="MenuLayer/Success/Stars/Star2"]
 margin_top = 204.0
 margin_right = 200.0
 margin_bottom = 252.0
 text = "<0:45"
 align = 1
 
-[node name="Star3" type="VBoxContainer" parent="SuccessLayer/ColorRect/Stars"]
+[node name="Star3" type="VBoxContainer" parent="MenuLayer/Success/Stars"]
 margin_left = 440.0
 margin_right = 640.0
 margin_bottom = 252.0
 
-[node name="TextureRect" type="TextureRect" parent="SuccessLayer/ColorRect/Stars/Star3"]
+[node name="TextureRect" type="TextureRect" parent="MenuLayer/Success/Stars/Star3"]
 modulate = Color( 1, 0.941176, 0.247059, 1 )
 margin_right = 200.0
 margin_bottom = 200.0
@@ -186,27 +196,48 @@ rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 10 )
 expand = true
 
-[node name="Label" type="Label" parent="SuccessLayer/ColorRect/Stars/Star3"]
+[node name="Label" type="Label" parent="MenuLayer/Success/Stars/Star3"]
 margin_top = 204.0
 margin_right = 200.0
 margin_bottom = 252.0
 text = "<0:30"
 align = 1
 
-[node name="PauseLayer" type="CanvasLayer" parent="."]
+[node name="Death" type="Control" parent="MenuLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="Pause" type="Control" parent="PauseLayer"]
+[node name="Label" type="Label" parent="MenuLayer/Death"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -427.0
+margin_top = -151.0
+margin_right = 441.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 4 )
+text = "YOU DIED"
+
+[node name="Label2" type="Label" parent="MenuLayer/Death"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = 85.0
+margin_right = 245.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 4 )
+text = "Press 'R' to Restart"
+
+[node name="Pause" type="Control" parent="MenuLayer"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="PauseLayer/Pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.145098, 0.145098, 0.145098, 0.392157 )
-
-[node name="Label" type="Label" parent="PauseLayer/Pause"]
+[node name="Label" type="Label" parent="MenuLayer/Pause"]
 margin_left = 639.0
 margin_top = 387.0
 margin_right = 1399.0
@@ -215,48 +246,13 @@ custom_fonts/font = ExtResource( 4 )
 text = "PAUSE
 "
 
-[node name="Label2" type="Label" parent="PauseLayer/Pause"]
+[node name="Label2" type="Label" parent="MenuLayer/Pause"]
 margin_left = 703.0
 margin_top = 625.0
 margin_right = 1205.0
 margin_bottom = 696.0
 custom_fonts/font = SubResource( 2 )
 text = "Press 'R' to Restart"
-
-[node name="LevelSelect" type="VBoxContainer" parent="PauseLayer"]
-pause_mode = 2
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -283.0
-margin_top = -27.0
-margin_right = -30.0
-margin_bottom = 27.0
-
-[node name="Label" type="Label" parent="PauseLayer/LevelSelect"]
-margin_right = 253.0
-margin_bottom = 48.0
-text = "Select Level:"
-
-[node name="HiScore" type="VBoxContainer" parent="PauseLayer"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 30.0
-margin_top = -26.0
-margin_right = 321.0
-margin_bottom = 26.0
-
-[node name="Label" type="Label" parent="PauseLayer/HiScore"]
-margin_right = 291.0
-margin_bottom = 48.0
-text = "High Scores:"
-
-[node name="Scores" type="GridContainer" parent="PauseLayer/HiScore"]
-margin_top = 52.0
-margin_right = 291.0
-margin_bottom = 52.0
-columns = 2
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -323,5 +319,5 @@ normal = ExtResource( 6 )
 action = "restart"
 visibility_mode = 1
 
-[connection signal="button_down" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
-[connection signal="pressed" from="SuccessLayer/ColorRect/Button" to="." method="next_level"]
+[connection signal="button_down" from="MenuLayer/Success/Button" to="." method="next_level"]
+[connection signal="pressed" from="MenuLayer/Success/Button" to="." method="next_level"]

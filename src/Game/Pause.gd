@@ -2,14 +2,12 @@ extends Control
 
 signal restart
 
-var level_select: Control = null
-var hi_score: Control = null
+var common_elements: Control = null
 onready var game: Node = $"../.."
 
 func _ready():
 	hide()
-	level_select = get_parent().get_node("LevelSelect")
-	hi_score = get_parent().get_node("HiScore")
+	common_elements = get_parent().get_node("CommonElements")
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -22,13 +20,11 @@ func pause():
 	var tree = get_tree()
 	tree.paused = not tree.paused
 	if tree.paused:
-		level_select.show()
-		hi_score.show()
+		common_elements.show()
 		show()
 	else:
 		hide()
-		level_select.hide()
-		hi_score.hide()
+		common_elements.hide()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("restart"):
