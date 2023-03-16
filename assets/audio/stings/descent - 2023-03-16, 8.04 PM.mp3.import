@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/descent - 2023-03-16, 8.04 PM.mp3-650ee5f7e0172fb6845a0054fd45d0e2.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/stings/descent - 2023-03-16, 8.04 PM.mp3"
+dest_files=[ "res://.import/descent - 2023-03-16, 8.04 PM.mp3-650ee5f7e0172fb6845a0054fd45d0e2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rising - 2023-03-16, 7.32 PM.mp3-b7e2e44986a109e49d51d686ec6df47d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/stings/rising - 2023-03-16, 7.32 PM.mp3"
+dest_files=[ "res://.import/rising - 2023-03-16, 7.32 PM.mp3-b7e2e44986a109e49d51d686ec6df47d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

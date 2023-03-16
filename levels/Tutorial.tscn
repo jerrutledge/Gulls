@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Game/Level.gd" type="Script" id=5]
 [ext_resource path="res://addons/mixing-desk/music/mixing_desk_music.gd" type="Script" id=6]
 [ext_resource path="res://addons/mixing-desk/music/song.gd" type="Script" id=7]
-[ext_resource path="res://assets/audio/coniferous-forest-142569.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/music/coniferous-forest-142569.mp3" type="AudioStream" id=8]
 [ext_resource path="res://addons/mixing-desk/music/containers/core_cont.gd" type="Script" id=9]
 
 [node name="Level" type="Node2D"]

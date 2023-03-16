@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coniferous-forest-142569.mp3-a24574c8dc25b05d9119d1d8225af3b9.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/coniferous-forest-142569.mp3"
+dest_files=[ "res://.import/coniferous-forest-142569.mp3-a24574c8dc25b05d9119d1d8225af3b9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
