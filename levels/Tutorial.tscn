@@ -158,3 +158,5 @@ script = ExtResource( 9 )
 
 [node name="trackk" type="AudioStreamPlayer2D" parent="MixingDeskMusic/test/CoreContainer"]
 stream = ExtResource( 8 )
+max_distance = 60000.0
+attenuation = 1e-05
