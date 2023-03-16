@@ -156,7 +156,5 @@ transition_beats = 4.0
 [node name="CoreContainer" type="Node" parent="MixingDeskMusic/test"]
 script = ExtResource( 9 )
 
-[node name="trackk" type="AudioStreamPlayer2D" parent="MixingDeskMusic/test/CoreContainer"]
+[node name="trackk" type="AudioStreamPlayer" parent="MixingDeskMusic/test/CoreContainer"]
 stream = ExtResource( 8 )
-max_distance = 60000.0
-attenuation = 1e-05
